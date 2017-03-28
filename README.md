@@ -1,2 +1,2 @@
 # scan
-scrip en shell para escaneos de puertos con nmap
+scrip en shell con simple menu para escaneos de puertos con nmap
