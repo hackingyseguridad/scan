@@ -7,7 +7,7 @@ echo "1) Rapido 100p, 2) Normal 1000 p, 3) Completo 65536 p, 0) Salir"
 read x
 case $x in
 1)
-echo ""; nmap -iL ip.txt -Pn -f --open -sU -sT -sC -sV -O --max-retries 1 -F -oG -A resultado.txt
+echo ""; nmap -iL ip.txt -Pn -f --open -sU -sT -sC -sV -O --max-retries 1 -F -oG resultado.txt
 ;;
 2)
 echo ""; nmap -iL ip.txt -Pn -f --open -sU -sT -sC -sV -O --max-retries 1  -oG resultado.txt
