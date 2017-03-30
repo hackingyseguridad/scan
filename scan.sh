@@ -1,12 +1,19 @@
 #!/bin/bash
-echo "#	#########################################################	#"
-echo "#	Script para escaneos ./scan.sh					#"
-echo "#	Incluir en misma carpeta ip.txt con rangos a escanear		#"
-echo "#	Generara automaticamente misma carpeta resultado.txt		#"
-echo "#	Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:		#"
-echo "#	1) Rapido, 2) Normal, 3) Completo 65536p, 4) IPv6		#"
-echo "#	4) 5) DNS, 6) NTP, 7) SNMP, 8) Telnet, 9) SSH, 0) Salir		#"
-echo "#	#########################################################	#"
+echo "Uso: sh scan.sh"			
+echo "Incluir en misma carpeta ip.txt con rangos a escanear"		
+echo "Generara automaticamente misma carpeta resultado.txt"
+echo "1) Rapido 100 puertos"
+echo "2) Normal 1000 puertos"
+echo "3) Completo 65535 puertos"
+echo "f) Saltar firewall"
+echo "4) IPv6"		
+echo "5) DNS"
+echo "6) NTP"
+echo "7) SNMP"
+echo "8) Telnet"
+echo "9) SSH"
+echo "0) Salir"		
+echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"
 echo 
 read x
 case $x in
