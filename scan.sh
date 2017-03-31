@@ -1,4 +1,9 @@
 #!/bin/bash
+#############################################################
+#Menu para escaneos de puertos con Nmap (http://nmap.org)
+#(c) Antonio Taboada 4/4/2017
+#En modo consola dar permisos de ejecucion: chmod 777 scan.sh
+#############################################################
 echo "Uso: sh scan.sh"			
 echo "Incluir en misma carpeta ip.txt con rangos a escanear"		
 echo "Generara automaticamente misma carpeta resultado.txt"
@@ -12,10 +17,9 @@ echo "6) NTP"
 echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
+echo "p) Solo Ping"
 echo "0) Salir"		
-echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"
-echo 
-read x
+echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 1)
 echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F -oG resultado.txt; tail resultado.txt
@@ -25,6 +29,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resul
 ;;
 3)
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
+;;
+f)
+echo ""; nmap -iL ip.txt -Pn -g0 --open -sU -sS -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
 ;;
 4)
 echo ""; nmap -iL ip.txt -6 -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resultado.txt
@@ -43,6 +50,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p23 -oG 
 ;;
 9)
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p22 -oG resultado.txt
+;;
+p)
+echo ""; nmap -iL ip.txt -sn -oG resultado.txt
 ;;
 *)
 echo "Opcion no valida!"
