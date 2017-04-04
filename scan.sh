@@ -1,11 +1,11 @@
 #!/bin/bash
-#############################################################
+##############################################################
 # Menu para escaneos de puertos con Nmap (http://nmap.org)
 # Version Beta (c) Antonio Taboada 04/04/2017
 # En modo consola dar permisos de ejecucion: chmod 777 scan.sh
 # Ejecutar en modo consola: ./scan.sh
-#############################################################
-echo +++ Script para escaneos con Nmap (https://nmap.org) +++
+##############################################################
+echo "+++ Script para escaneos con Nmap (https://nmap.org) +++"
 echo "Uso: sh scan.sh"			
 echo "Incluir en misma carpeta ip.txt con rangos a escanear"		
 echo "Generara automaticamente misma carpeta resultado.txt"
