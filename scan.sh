@@ -2,6 +2,7 @@
 ##############################################################
 # Menu para escaneos de puertos con Nmap (http://nmap.org)
 # Version Beta (c) Antonio Taboada 04/04/2017
+# Requiere privilegios de Super User
 # En modo consola dar permisos de ejecucion: chmod 777 scan.sh
 # Ejecutar en modo consola: ./scan.sh
 ##############################################################
