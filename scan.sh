@@ -6,6 +6,7 @@
 # En modo consola dar permisos de ejecucion: chmod 777 scan.sh
 # Ejecutar en modo consola: ./scan.sh
 ##############################################################
+sudo su
 echo "Script para escaneos con Nmap (https://nmap.org)"
 echo "Uso: sh scan.sh"			
 echo "Incluir en misma carpeta ip.txt con rangos a escanear"		
