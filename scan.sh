@@ -31,7 +31,7 @@ echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F -oG resultado.txt; ta
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resultado.txt
 ;;
 3)
-echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV --osscan-guess --max-retries 1 -p 0-65535 -oG resultado.txt
 ;;
 f)
 echo ""; nmap -iL ip.txt -Pn -g0 --open -sU -sS -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
