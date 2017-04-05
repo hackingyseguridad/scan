@@ -34,7 +34,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resul
 -echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
 ;;
 f)
-echo ""; nmap -iL ip.txt -Pn -g0 --open -sU -sS -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
+echo ""; nmap -iL ip.txt -Pn -g0 --open -sU -sS -sC -sV -O --max-retries 1 -p 0-65535 --script firewall-bypass -oG resultado.txt
 ;;
 4)
 echo ""; nmap -iL ip.txt -6 -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resultado.txt
