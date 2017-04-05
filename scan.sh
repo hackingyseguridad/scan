@@ -25,13 +25,13 @@ echo "0) Salir"
 echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 1)
-echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F --osscan-guess -oG resultado.txt; tail resultado.txt
 ;;
 2)
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resultado.txt
 ;;
 3)
-echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV --osscan-guess --max-retries 1 -p 0-65535 -oG resultado.txt
+-echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
 ;;
 f)
 echo ""; nmap -iL ip.txt -Pn -g0 --open -sU -sS -sC -sV -O --max-retries 1 -p 0-65535 -oG resultado.txt
