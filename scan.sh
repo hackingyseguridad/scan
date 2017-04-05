@@ -2,11 +2,10 @@
 ##############################################################
 # Menu para escaneos de puertos con Nmap (http://nmap.org)
 # Version Beta (c) Antonio Taboada 04/04/2017
-# Requiere privilegios de Super User
+# Requiere privilegios de Super User sudo su
 # En modo consola dar permisos de ejecucion: chmod 777 scan.sh
 # Ejecutar en modo consola: ./scan.sh
 ##############################################################
-sudo su
 echo "Script para escaneos con Nmap (https://nmap.org)"
 echo "Uso: sh scan.sh"			
 echo "Incluir en misma carpeta ip.txt con rangos a escanear"		
