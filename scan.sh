@@ -53,7 +53,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p23 -oG 
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p22 -oG resultado.txt
 ;;
 p)
-echo ""; nmap -iL ip.txt -sn -oG resultado.txt
+echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
 ;;
 *)
 echo "Opcion no valida!"
