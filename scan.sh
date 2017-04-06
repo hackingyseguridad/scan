@@ -1,15 +1,13 @@
 #!/bin/bash
-##############################################################
-# Menu para escaneos de puertos con Nmap (http://nmap.org)
-# Version Beta (c) Antonio Taboada 04/04/2017
-# Requiere privilegios de Super User sudo su
-# En modo consola dar permisos de ejecucion: chmod 777 scan.sh
-# Ejecutar en modo consola: ./scan.sh
-##############################################################
-echo "Script para escaneos con Nmap (https://nmap.org)"
-echo "Uso: sh scan.sh"			
-echo "Incluir en misma carpeta ip.txt con rangos a escanear"		
-echo "Generara automaticamente misma carpeta resultado.txt"
+# Version Beta (c) hackingyseguridad.com 2017
+echo "###############################################################"
+echo "# Script para escaneos de puertos con Nmap: (http://nmap.org) #"
+echo "# En modo consola dar permisos de ejecucion: chmod +x scan.sh #"
+echo "# Ejecutar en consola con privilegios de SuperUser: ./scan.sh #"
+echo "# Incluir en la misma carpeta con rangos ip a ecanear: ip.txt #"
+echo "# Al finalizar se generara en la misma carpeta: resultado.txt #"
+echo "###############################################################"
+echo
 echo "1) Rapido: 100 puertos udp/tcp"
 echo "2) Normal: 1000 puertos udp/tcp"
 echo "3) Completo: 65535 puertos"
@@ -25,7 +23,7 @@ echo "0) Salir"
 echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 1)
-echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F --osscan-guess -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F -O -oG resultado.txt; tail resultado.txt
 ;;
 2)
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resultado.txt
