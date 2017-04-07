@@ -57,7 +57,7 @@ p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
 ;;
 s)
-echo ""; nping --tcp-connect rate=999 -c 100 194.224.175.76 -p 80 
+echo ""; nping --tcp-connect -c 100 194.224.175.76 -p 80 
 ;;
 *)
 echo "Opcion no valida!"
