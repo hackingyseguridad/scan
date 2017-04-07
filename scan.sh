@@ -57,7 +57,7 @@ p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
 ;;
 t)
-echo ""; nmap -iL ip.txt --traceroute > resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
 ;;
 *)
 echo "Opcion no valida!"
