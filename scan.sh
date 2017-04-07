@@ -19,7 +19,7 @@ echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
 echo "p) Solo Ping"
-echo "t) Traceroute
+echo "t) Traceroute"
 echo "0) Salir"
 echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
