@@ -10,7 +10,7 @@ echo "###############################################################"
 echo
 echo "1) Rapido: 100 puertos udp/tcp"
 echo "2) Normal: 1000 puertos udp/tcp"
-echo "3) Completo: 65535 puertos"
+echo "3) Completo: 65535 puertos udp/tcp"
 echo "f) Saltar firewall"
 echo "4) IPv6"		
 echo "5) DNS"
@@ -21,7 +21,7 @@ echo "9) SSH"
 echo "p) Solo Ping"
 echo "t) Traceroute"
 echo "0) Salir"
-echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"; read x
+echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 1)
 echo ""; nmap -iL ip.txt --open -sU -sT --max-retries 1 -F -O -oG resultado.txt; tail resultado.txt
