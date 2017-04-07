@@ -19,7 +19,7 @@ echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
 echo "p) Solo Ping"
-echo "s) TCP SYM connect
+echo "t) Traceroute
 echo "0) Salir"
 echo "Pulsa opcion del tiopo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
@@ -56,8 +56,8 @@ echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p22 -oG 
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
 ;;
-s)
-echo ""; nping --tcp-connect -c 100 194.224.175.76 -p 80 
+t)
+echo ""; nmap -iL ip.txt --traceroute; tail resultado.txt 
 ;;
 *)
 echo "Opcion no valida!"
