@@ -48,7 +48,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p161 --script snmp-info -oG resultado.txt; tail resultado.txt
 ;;
 8)
-echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 --script=vulscan-oG resultado.txt; tail resultado.txt
 ;;
 9)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 -oG resultado.txt; tail resultado.txt
