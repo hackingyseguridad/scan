@@ -39,13 +39,13 @@ echo ""; nmap -iL ip.txt -Pn -g0 --open -sU -sS -sC -sV -O --max-retries 1 -p 0-
 echo ""; nmap -iL ip.txt -6 -Pn --open -sU -sT -sC -sV -O --max-retries 1 -oG resultado.txt
 ;;
 5)
-echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p53 -oG resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p53 --script dns-recursion -oG resultado.txt
 ;;
 6)
-echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt
 ;;
 7)
-echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p161 -oG resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p161 --script snmp-info -oG resultado.txt
 ;;
 8)
 echo ""; nmap -iL ip.txt -Pn --open -sU -sT -sC -sV -O --max-retries 1 -p23 -oG resultado.txt
