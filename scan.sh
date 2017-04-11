@@ -52,7 +52,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p161 --script snm
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 --script=vulscan -oG resultado.txt; tail resultado.txt
 ;;
 9)
-echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 --script=vulscan -oG resultado.txt; tail resultado.txt
 ;;
 h)
 echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80 --script=vulscan -oG resultado.txt; tail resultado.txt
