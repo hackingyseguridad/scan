@@ -18,6 +18,7 @@ echo "6) NTP"
 echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
+echo "h) http"
 echo "p) Solo Ping"
 echo "t) Traceroute"
 echo "0) Salir"
@@ -52,6 +53,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 --script=vuls
 ;;
 9)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 -oG resultado.txt; tail resultado.txt
+;;
+h)
+echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80 --script=vulscan -oG resultado.txt; tail resultado.txt
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
