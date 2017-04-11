@@ -4,7 +4,7 @@ echo "###############################################################"
 echo "# Script para escaneos de puertos con Nmap: (http://nmap.org) #"
 echo "# En modo consola dar permisos de ejecucion: chmod +x scan.sh #"
 echo "# Ejecutar en consola con privilegios de SuperUser: ./scan.sh #"
-echo "# Incluir en la misma carpeta con rangos ip a ecanear: ip.txt #"
+echo "# Incluir en la misma carpeta con rangos IP a scanear: ip.txt #"
 echo "# Al finalizar se generara en la misma carpeta: resultado.txt #"
 echo "###############################################################"
 echo
