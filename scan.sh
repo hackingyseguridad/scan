@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version Beta (c) hackingyseguridad.com 2017
+# Version Beta (c) Antonio Taboada 2017
 echo "###############################################################"
 echo "# Script para escaneos de puertos con Nmap: (http://nmap.org) #"
 echo "# En modo consola dar permisos de ejecucion: chmod +x scan.sh #"
