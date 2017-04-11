@@ -12,9 +12,9 @@ echo "1) Rapido: 100 puertos udp/tcp"
 echo "2) Normal: 1000 puertos udp/tcp"
 echo "3) Completo: 65535 puertos udp/tcp"
 echo "f) Saltar firewall"
-echo "4) IPv6"		
+echo "4) NTP"		
 echo "5) DNS"
-echo "6) NTP"
+echo "6) IPv6"
 echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
@@ -37,13 +37,13 @@ f)
 echo ""; nmap -iL ip.txt -Pn -g0 --open -sUSCV -O --max-retries 1 -p 0-65535 --script firewall-bypass -oG resultado.txt; tail resultado.txt
 ;;
 4)
-echo ""; nmap -iL ip.txt -6 -Pn --open -sUTCV -O --max-retries 1 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt; tail resultado.txt
 ;;
 5)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p53 --script dns-recursion -oG resultado.txt; tail resultado.txt
 ;;
 6)
-echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -6 -Pn --open -sUTCV -O --max-retries 1 -oG resultado.txt; tail resultado.txt
 ;;
 7)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p161 --script snmp-info -oG resultado.txt; tail resultado.txt
