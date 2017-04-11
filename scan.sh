@@ -55,7 +55,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 -oG resultado
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 -oG resultado.txt; tail resultado.txt
 ;;
 h)
-echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80,443 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80,443 --script shellshock -oG resultado.txt; tail resultado.txt
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
