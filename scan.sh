@@ -18,7 +18,7 @@ echo "6) IPv6"
 echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
-echo "w) Netbios, SMB
+echo "w) Netbios, SMB"
 echo "h) http"
 echo "p) Solo Ping"
 echo "t) Traceroute"
