@@ -56,7 +56,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 -oG resultado
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 -oG resultado.txt; tail resultado.txt
 ;;
 w)
-echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 --script smb-vuln-ms08-067.nse -oG resultado.txt; tail resultado.txt
 ;;
 h)
 echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
