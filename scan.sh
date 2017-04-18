@@ -18,6 +18,7 @@ echo "6) IPv6"
 echo "7) SNMP"
 echo "8) Telnet"
 echo "9) SSH"
+echo "w) Netbios, SMB
 echo "h) http"
 echo "p) Solo Ping"
 echo "t) Traceroute"
@@ -53,6 +54,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p23 -oG resultado
 ;;
 9)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p22 -oG resultado.txt; tail resultado.txt
+;;
+w)
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 -oG resultado.txt; tail resultado.txt
 ;;
 h)
 echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
