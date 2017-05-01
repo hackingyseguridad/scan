@@ -8,5 +8,5 @@ Traceroute BGP
 # tracebgp IP
 
 IP de un AS
-# ip2bgp IP
+# bgp2ip IP
 
