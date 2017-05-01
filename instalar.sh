@@ -6,3 +6,4 @@ chmod 777 bgp2ip
 chmod 777 tracebgp
 cp bgp2ip /sbin/
 cp tracebgp /sbin/
+apt-get install nmap
