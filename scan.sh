@@ -50,16 +50,16 @@ echo ""; nmap -iL ip.txt -6 -Pn --open -sUTCV -O --max-retries 1 -oG resultado.t
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p161 --script snmp-info -oG resultado.txt; tail resultado.txt
 ;;
 8)
-echo ""; nmap -iL ip.txt -Pn --open -sTCV -O -p23 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p23 -oG resultado.txt; tail resultado.txt
 ;;
 9)
-echo ""; nmap -iL ip.txt -Pn --open -sTCV -O -p22,2222 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p22,2222 -oG resultado.txt; tail resultado.txt
 ;;
 w)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 -oG resultado.txt; tail resultado.txt
 ;;
 h)
-echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
