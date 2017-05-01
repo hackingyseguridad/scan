@@ -1,12 +1,12 @@
-# scan
-suite de scrips en shell con simple menu para escaneos
+# scan suite
+Suite de scrips en shell para escaneos:
 
-Escaneos con nmap
-sh scan.sh
+Script de escaneos bash con nmap
+# sh scan.sh
 
 Traceroute BGP
-trace2bgp
+# tracebgp IP
 
 IP de un AS
-ip2bgp
+# ip2bgp IP
 
