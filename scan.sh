@@ -69,7 +69,7 @@ t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
 ;;
 x)
-echo ""; OIFS=$IFS; IFS=$'\n'; service tor start; proxychains nmap $1 $2 $3 -iL ip.txt --open -sVC -O -oG resultado.txt
+echo ""; OIFS=$IFS; IFS=$'\n'; service tor start; proxychains nmap -iL ip.txt --open -sVC -O -oG resultado.txt
 ;;
 *)
 echo "Opcion no valida!"
