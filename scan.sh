@@ -22,6 +22,7 @@ echo "w) Netbios, SMB"
 echo "h) http"
 echo "p) Solo Ping"
 echo "t) Traceroute"
+echo "x) Tor TCP
 echo "0) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
@@ -66,6 +67,9 @@ echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
 ;;
 t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
+;;
+x)
+echo ""; OIFS=$IFS; IFS=$'\n'; service tor start; proxychains nmap $1 $2 $3 -iL ip.txt --open -sVC -O -oG resultado.txt
 ;;
 *)
 echo "Opcion no valida!"
