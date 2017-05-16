@@ -21,6 +21,7 @@ echo "9) SSH"
 echo "w) Netbios, SMB"
 echo "h) http"
 echo "p) Solo Ping"
+echo "r) RDP"
 echo "t) Traceroute"
 echo "x) Tor TCP"
 echo "0) Salir"
@@ -64,6 +65,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p80,443 --script http-enum -oG resu
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
+;;
+r)
+echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p3389 -oG resultado.txt; tail resultado.txt
 ;;
 t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
