@@ -4,7 +4,11 @@
 chmod 777 scan.sh
 apt-get install traceroute whois
 chmod 777 bgp2ip
+chmod 777 ip2bgp
+chmod 777 miip
 chmod 777 tracebgp
 cp bgp2ip /sbin/
+cp ip2bgp /sbin/
+cp miip /sbin
 cp tracebgp /sbin/
 apt-get install nmap
