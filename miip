@@ -1,0 +1,4 @@
+#!/bin/bash
+# Mi ip publica
+# (c) hackingyseguridad.com 2017
+curl http://ip-api.com/line/?fields=query
