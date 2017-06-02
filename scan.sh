@@ -59,7 +59,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p23 -oG resultado.txt; tail resulta
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p22,2222 -oG resultado.txt; tail resultado.txt
 ;;
 w)
-echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 --script smb.nse -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 --script samba-vuln-cve-2017-7494.nse -oG resultado.txt; tail resultado.txt
 ;;
 h)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
