@@ -10,3 +10,12 @@ Traceroute BGP
 IP de un AS
 # bgp2ip IP
 
+AS de un IP
+# ip2bgp
+
+                  ______ ____ _____    ____       _____|  |__  
+                 /  ___// ___\\__  \  /    \     /  ___/  |  \ 
+                 \___ \\  \___ / __ \|   |  \    \___ \|   Y  \
+                /____  >\___  >____  /___|  / /\/____  >___|  /
+                     \/     \/     \/     \/  \/     \/     \/ 
+http://www.network-science.de/ascii/
