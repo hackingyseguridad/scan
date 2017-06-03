@@ -11,7 +11,8 @@ IP de un AS
 # bgp2ip IP
 
 AS de un IP
-# ip2bgp
+# ip2bgp IP
+
 
                   ______ ____ _____    ____       _____|  |__  
                  /  ___// ___\\__  \  /    \     /  ___/  |  \ 
