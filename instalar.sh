@@ -1,6 +1,6 @@
 #!/bin/sh
-# instalador como comando de tracebgp
-# Se instalara en /sbin/ para poder ser ejecutardo como un comando de Linux
+# instalador suite escaneos
+# Se instalaran as utilidades en /sbin/ para poder ser ejecutardo como comandos de Linux
 chmod 777 scan.sh
 apt-get install traceroute whois
 git clone https://github.com/glennzw/shodan-hq-nse
