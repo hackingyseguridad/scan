@@ -13,4 +13,5 @@ cp miip /sbin
 cp tracebgp /sbin/
 apt-get install nmap
 git clone https://github.com/glennzw/shodan-hq-nse
-cp shodan-hq-nse/shodan-hq.nse /usr/local/share/nmap/scripts/
+cp shodan-hq-nse/shodan-hq.nse /usr/share/nmap/scripts/
+echo "Instalacion finalizada."
