@@ -42,7 +42,7 @@ f)
 echo ""; nmap -iL ip.txt -Pn -g0 --open -sUSCV -O --max-retries 1 -p 0-65535 --script firewall-bypass -oG resultado.txt; tail resultado.txt
 ;;
 s)
-echo ""; nmap -iL ip.txt -sn --script=shodan-hq.nse --script-args 'apikey=<yourShodanAPIKey' -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --script=shodan-hq.nse --script-args 'apikey=<yourShodanAPIKey' -oG resultado.txt; tail resultado.txt
 ;;
 4)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt; tail resultado.txt
