@@ -3,6 +3,7 @@
 # Se instalara en /sbin/ para poder ser ejecutardo como un comando de Linux
 chmod 777 scan.sh
 apt-get install traceroute whois
+git clone https://github.com/glennzw/shodan-hq-nse
 chmod 777 bgp2ip
 chmod 777 ip2bgp
 chmod 777 miip
