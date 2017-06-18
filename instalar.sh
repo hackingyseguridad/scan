@@ -4,6 +4,7 @@
 chmod 777 scan.sh
 apt-get install traceroute whois
 git clone https://github.com/glennzw/shodan-hq-nse
+cp shodan-hq.nse /usr/local/share/nmap/scripts/
 chmod 777 bgp2ip
 chmod 777 ip2bgp
 chmod 777 miip
