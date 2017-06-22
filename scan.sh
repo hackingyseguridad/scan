@@ -69,7 +69,7 @@ h)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
 ;;
 p)
-echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -sP -oG resultado.txt; tail resultado.txt
 ;;
 e)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p21 -oG resultado.txt; tail resultado.txt
