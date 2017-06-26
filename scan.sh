@@ -12,7 +12,6 @@ echo "1) Rapido: 100 puertos udp/tcp"
 echo "2) Normal: 1000 puertos udp/tcp"
 echo "3) Completo: 65535 puertos udp/tcp"
 echo "f) Saltar firewall"
-echo "s) Shodan.io"
 echo "4) NTP"		
 echo "5) DNS"
 echo "6) IPv6"
@@ -40,9 +39,6 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p 0-65535 -oG res
 ;;
 f)
 echo ""; nmap -iL ip.txt -Pn -g0 --open -sUSCV -O --max-retries 1 -p 0-65535 --defeat-rst-ratelimit --script firewall-bypass -oG resultado.txt; tail resultado.txt
-;;
-s)
-echo ""; nmap -iL ip.txt -Pn --script=shodan-hq.nse --script-args 'apikey=<yourShodanAPIKey' -oG resultado.txt; tail resultado.txt
 ;;
 4)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt; tail resultado.txt
