@@ -21,6 +21,7 @@ echo "9) SSH"
 echo "w) Netbios, SMB"
 echo "h) http"
 echo "p) Solo Ping"
+echo "i) Solo resolucion dns inversa"
 echo "e) ftp"
 echo "r) RDP"
 echo "t) Traceroute"
@@ -65,7 +66,10 @@ h)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
 ;;
 p)
-echo ""; nmap -iL ip.txt -sP -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
+;;
+i)
+echo ""; nmap -iL ip.txt -Pn -sL -R --dns-servers 194.179.1.100 -oG resultado.txt; tail resultado.txt
 ;;
 e)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p21 -oG resultado.txt; tail resultado.txt
