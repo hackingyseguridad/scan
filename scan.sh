@@ -64,7 +64,7 @@ w)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 -oG resultado.txt; tail resultado.txt
 ;;
 h)
-echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p80,443 --script http-enum -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn -p80,443 --script http-enum --open -sCV -O -oG resultado.txt; tail resultado.txt
 ;;
 m)
 echo ""; nmap -iL ip.txt -Pn -p25 --script=smtp* -sCV -O --open -oG resultado.txt; tail resultado.txt
