@@ -30,7 +30,7 @@ echo "0) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 1)
-echo ""; nmap -iL ip.txt --open -sUT --max-retries 1 -F -O -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUT --max-retries 1 -F -O -oG resultado.txt; tail resultado.txt
 ;;
 2)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -oG resultado.txt; tail resultado.txt
