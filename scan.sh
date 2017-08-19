@@ -25,7 +25,7 @@ echo "p) Solo Ping"
 echo "i) Resolucion inversa"
 echo "e) ftp"
 echo "r) RDP"
-echo "s) Todos los scripts
+echo "s) Todos los scripts"
 echo "t) Traceroute"
 echo "x) Tor TCP"
 echo "0) Salir"
