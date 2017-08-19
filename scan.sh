@@ -25,6 +25,7 @@ echo "p) Solo Ping"
 echo "i) Resolucion inversa"
 echo "e) ftp"
 echo "r) RDP"
+echo "s) Todos los scripts
 echo "t) Traceroute"
 echo "x) Tor TCP"
 echo "0) Salir"
@@ -80,6 +81,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p21 -oG resultado.txt; tail resulta
 ;;
 r)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p3389 -oG resultado.txt; tail resultado.txt
+;;
+s)
+echo ""; nmap -iL ip.txt -Pn --script=all -sCV -O --open -oG resultado.txt; tail resultado.txt
 ;;
 t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
