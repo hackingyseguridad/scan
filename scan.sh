@@ -25,7 +25,7 @@ echo "p) Solo Ping"
 echo "i) Resolucion inversa"
 echo "e) ftp"
 echo "r) RDP"
-echo "s) Todos los scripts"
+echo "s) Broadcast"
 echo "t) Traceroute"
 echo "x) Tor TCP"
 echo "0) Salir"
@@ -83,7 +83,7 @@ r)
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p3389 -oG resultado.txt; tail resultado.txt
 ;;
 s)
-echo ""; nmap -iL ip.txt -Pn --script=all -sCV -O --open -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --script=broadcast* --script-args=newtargets -sCV -O --open -oG resultado.txt; tail resultado.txt
 ;;
 t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
