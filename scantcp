@@ -1,7 +1,7 @@
 #!/bin/sh
 echo
-echo "scantcp Simple escaner de puertos"
+echo "scantcp: simple escaner de puertos tcp"
 echo "(c) hackingyseguridad.com 2017"
-echo "Uso.: scantcp <IP>"
+echo "Uso.: ./scantcp <IP>"
 echo
 nc -v -z -r $1 1-65535
