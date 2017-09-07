@@ -3,6 +3,7 @@
 # Se instalaran as utilidades en /sbin/ para poder ser ejecutardo como comandos de Linux
 chmod 777 scan.sh
 apt-get install traceroute whois
+apt-get install masscan
 chmod 777 bgp2ip
 chmod 777 ip2bgp
 chmod 777 miip
