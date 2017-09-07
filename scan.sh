@@ -8,6 +8,7 @@ echo "# Incluir en la misma carpeta con rangos IP a scanear: ip.txt #"
 echo "# Al finalizar se generara en la misma carpeta: resultado.txt #"
 echo "###############################################################"
 echo
+echo "u) Ultra rapido: puertos udp/tcp"
 echo "1) Rapido: 100 puertos udp/tcp"
 echo "2) Normal: 1000 puertos udp/tcp"
 echo "3) Completo: 65535 puertos udp/tcp"
@@ -31,6 +32,9 @@ echo "x) Tor TCP"
 echo "0) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
+u)
+echo ""; masscan -iL ip.txt -sS --open-only -p0-65535 -oG resultado.txt; tail resultado.txt
+;;
 1)
 echo ""; nmap -iL ip.txt -Pn --open -sUT --max-retries 1 -F -O -oG resultado.txt; tail resultado.txt
 ;;
