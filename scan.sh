@@ -76,7 +76,7 @@ m)
 echo ""; nmap -iL ip.txt -Pn -p25 --script=smtp* -sCV -O --open -oG resultado.txt; tail resultado.txt
 ;;
 n)
-echo ""; nmap -iL ip.txt -Pn -sUCV -p1900 --max-retries 1 --open -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUCV -p1900 --max-retries 1 -oG resultado.txt; tail resultado.txt
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
