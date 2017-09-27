@@ -22,6 +22,7 @@ echo "9) SSH"
 echo "w) Netbios, SMB"
 echo "h) http"
 echo "m) smtp"
+echo "m) ssdp"
 echo "p) Solo Ping"
 echo "i) Resolucion inversa"
 echo "e) ftp"
@@ -73,6 +74,9 @@ echo ""; nmap -iL ip.txt -Pn -p80,443 --script http-enum --open -sCV -O -oG resu
 ;;
 m)
 echo ""; nmap -iL ip.txt -Pn -p25 --script=smtp* -sCV -O --open -oG resultado.txt; tail resultado.txt
+;;
+n)
+echo ""; nmap -iL ip.txt -Pn -sUCV -p1900 --max-retries 1 --open -oG resultado.txt; tail resultado.txt
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
