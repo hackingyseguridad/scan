@@ -37,7 +37,7 @@ case $x in
 u)
 echo ""; masscan --rate 9999999999 -iL ip.txt -sS --open-only -n -p0-65535 --ports U:0-65535 -oG resultado.txt; tail resultado.txt
 ;;
-0) nmap -iL ip.txt -Pn --open -sUT --max-retries 1 -F -O -oG resultado.txt&exit ;;
+0) nmap -iL ip.txt -Pn --open -sUTV --max-retries 1 -F -O -oG resultado.txt&exit ;;
 1)
 echo ""; nmap -iL ip.txt -Pn --open -sUT --max-retries 1 -F -O -oG resultado.txt; tail resultado.txt
 ;;
