@@ -31,7 +31,7 @@ echo "r) RDP"
 echo "s) Broadcast"
 echo "t) Traceroute"
 echo "x) Tor TCP"
-echo "0) Salir"
+echo "q) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 u)
