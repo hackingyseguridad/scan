@@ -7,7 +7,7 @@ echo "# Ejecutar en consola con privilegios de SuperUser: ./scan.sh #"
 echo "# Incluir en la misma carpeta con rangos IP a scanear: ip.txt #"
 echo "# Al finalizar se generara en la misma carpeta: resultado.txt #"
 echo "###############################################################"
-# Top20 puetos TCP para escaneo fast:21,22,23,25,53,80,139,389,443,554,445,631,966,1023,1024,1723,1080,5900,8080,8443,10000
+# Top20 puetos TCP para escaneo fast:21,22,23,25,53,80,139,389,443,554,445,631,966,1023,1723,1080,5900,8080,8443,10000
 echo
 echo "u) Ultra rapido: puertos udp/tcp"
 echo "0) Rapido: 100 puertos udp/tcp como proceso Linux"
