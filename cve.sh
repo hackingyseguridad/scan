@@ -1,2 +1,2 @@
 #!/bin/sh
-nmap -iL ip.txt -Pn --open -sUT --max-retries 1 -F -O --script=/scan/nmap-vulners/vulners.nse 
+nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -O  --defeat-rst-ratelimit --script=vulners.nse 
