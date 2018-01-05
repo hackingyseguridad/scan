@@ -31,6 +31,7 @@ echo "e) ftp"
 echo "r) RDP"
 echo "s) Broadcast"
 echo "t) Traceroute"
+echo "v) Vulnerabilidades CVE"
 echo "x) Tor TCP"
 echo "q) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
@@ -98,6 +99,9 @@ echo ""; nmap -iL ip.txt -Pn --script=broadcast* --script-args=newtargets -sCV -
 ;;
 t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
+;;
+v)
+echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oA resultado.txt; tail resultado.txt
 ;;
 x)
 echo ""; OIFS=$IFS; IFS=$'\n'; service tor start; proxychains nmap -iL ip.txt --open -sVC -O -oG resultado.txt
