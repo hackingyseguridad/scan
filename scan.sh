@@ -23,6 +23,7 @@ echo "8) Telnet"
 echo "9) SSH"
 echo "w) Netbios, SMB"
 echo "h) http"
+echo "c) Cabeceras"
 echo "m) smtp"
 echo "n) ssdp"
 echo "p) Solo Ping"
@@ -76,6 +77,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 
 h)
 echo ""; nmap -iL ip.txt -Pn -p80,81,443,8000,8080,8081,8443,8888 --script http-enum --open -sCV -O -oG resultado.txt; tail resultado.txt
 ;;
+c)
+echo ""; nmap -iL ip.txt -Pn --open -sVCUT --max-retries 1 -F -O --script=http-security-headers -oG resultado.txt; tail resultado.txt
+;;
 m)
 echo ""; nmap -iL ip.txt -Pn -p25 --script=smtp* -sCV -O --open -oG resultado.txt; tail resultado.txt
 ;;
@@ -101,7 +105,7 @@ t)
 echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
 ;;
 v)
-echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oA resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oS resultado.txt; tail resultado.txt
 ;;
 x)
 echo ""; OIFS=$IFS; IFS=$'\n'; service tor start; proxychains nmap -iL ip.txt --open -sVC -O -oG resultado.txt
