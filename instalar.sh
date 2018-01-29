@@ -7,11 +7,13 @@ apt-get install masscan
 chmod 777 bgp2ip
 chmod 777 ip2bgp
 chmod 777 miip
+chmod 777 miip2
 chmod 777 tracebgp
 chmod 777 scantcp
 cp bgp2ip /sbin/
 cp ip2bgp /sbin/
 cp miip /sbin
+cp miip2 /sbin
 cp tracebgp /sbin/
 cp scantcp /sbin/
 apt-get install nmap
