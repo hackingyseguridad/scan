@@ -22,5 +22,6 @@ AS de un IP
                 /____  >\___  >____  /___|  / /\/____  >___|  /
                      \/     \/     \/     \/  \/     \/     \/ 
 http://www.network-science.de/ascii/
+https://nmap.org/man/es/man-host-discovery.html
 
 # www.hackingyseguridad.com
