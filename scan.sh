@@ -27,6 +27,7 @@ echo "c) Cabeceras"
 echo "m) smtp"
 echo "n) ssdp"
 echo "p) Solo Ping"
+echo "d) Descubrimiento host"
 echo "i) Resolucion inversa"
 echo "e) ftp"
 echo "r) RDP"
@@ -88,6 +89,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sUCV -p1900 --max-retries 1 -oG resultado.t
 ;;
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
+;;
+p)
+echo ""; nmap -iL ip.txt -PE -oG resultado.txt; tail resultado.txt
 ;;
 i)
 echo ""; nmap -iL ip.txt -sL -R --dns-servers 194.179.1.100 -oG resultado.txt; tail resultado.txt
