@@ -90,7 +90,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUCV -p1900 --max-retries 1 -oG resultado.t
 p)
 echo ""; nmap -iL ip.txt -sn -oG resultado.txt; tail resultado.txt
 ;;
-p)
+d)
 echo ""; nmap -iL ip.txt -PE -oG resultado.txt; tail resultado.txt
 ;;
 i)
