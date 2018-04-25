@@ -106,7 +106,7 @@ s)
 echo ""; nmap -iL ip.txt -Pn --script=broadcast* --script-args=newtargets -sCV -O --open -oG resultado.txt; tail resultado.txt
 ;;
 t)
-echo ""; nmap -iL ip.txt -Pn --open --traceroute > resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open --traceroute  --script=traceroute-geolocation -oN resultado.txt
 ;;
 v)
 echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oS resultado.txt; tail resultado.txt
