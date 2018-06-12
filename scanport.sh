@@ -1,6 +1,9 @@
-# Escanea las IP o fqdn en fichero ip.txt
-# por ejemplo puerto 80
+# Escanea listadp de IP o fqdn en fichero "ip.txt"
 # (c) 2018 hackingyseguridad.com
 
 #!/bin/bash
-for n in `cat ip.txt`; do nc -zv $n 80 -w 1; done
+echo "Uso.: ./scanport.sh <Puerto_TCP>"
+for n in `cat ip.txt`
+do
+        if nc -zv $n $1 -w 1 > /dev/null 2>&1; then echo $n ":" $1 "open"; fi
+done
