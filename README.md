@@ -2,6 +2,7 @@
 Suite de scrips en shell para escaneos:
 
 Script de escaneos bash con nmap
+wget -N -no-check-certificate https://raw.githubusercontent.com/hackingyseguridad/scan/master/instalar.sh && chmod +x instalar.sh && bash instalar.sh
 # sh scan.sh
 
 Traceroute BGP
