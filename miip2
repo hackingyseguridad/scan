@@ -1,17 +1,35 @@
 #!/bin/bash
+echo
 echo "OS Type:" $(uname -o)
+echo
 echo "OS Name:" $(cat /etc/os-release | grep ^VERSION= | cut -f2 -d\")
+echo
 echo "OS Version:" $(cat /etc/os-release | grep ^NAME= | cut -f2 -d\")
+echo
 echo "Architecture:" $(uname -m)
+echo
 echo "Kernel Release:" $(uname -r)
+echo
 echo "Load Average: $(cat /proc/loadavg | cut -f 1-3 -d ' ')"
+echo
 echo "System Uptime:" $(uptime -p | cut -f 2- -d " ")
+echo
 echo "Hostname:" $HOSTNAME
+echo
 echo "Internal IP:" $(hostname -I)
+echo
 echo "Gateway" $(ip route show 0.0.0.0/0)
+echo
 echo "Netmask" $(ifconfig |grep netmask)
+echo
 echo "External IP:" $(wget http://ipinfo.io/ip -qO -)
+echo
 echo "Name Servers:" $(cat /etc/resolv.conf | grep 'nameserver' | awk '{print $2}')
+echo
 echo -e "Logged In users:\n$(who)"
+echo
+echo "Usuario" $(whoami)
+echo
 echo -e "Memory Usages(Mo):\n$(free -m | grep -v +)"
+echo
 echo -e "Disk Usages:\n$(df -h| grep 'Filesystem\|^/dev/*')"
