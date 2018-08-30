@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mi ip publica
+# Mi IP publica, IP local y red local.
 # (c) hackingyseguridad.com 2017
 Verde='\033[0;32m'
 NC='\033[0m'
