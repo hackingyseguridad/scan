@@ -41,10 +41,10 @@ echo "IP publica: " $(wget http://ipinfo.io/ip -qO -)
 echo
 echo "DNS: " $(cat /etc/resolv.conf | grep 'nameserver' | awk '{print $2}')
 echo
-echo -e "Usuarios logueados:\n$(who)"
+echo "Usuarios logueados:\n$(who)"
 echo
 echo "Usuario actual: " $(whoami)
 echo
-echo -e "Memoria usada: \n$(free -m | grep -v +)"
+echo "Memoria usada: \n$(free -m | grep -v +)"
 echo
-echo -e "Discos: \n$(df -h| grep 'Filesystem\|^/dev/*')"
+echo "Discos: \n$(df -h| grep 'Filesystem\|^/dev/*')"
