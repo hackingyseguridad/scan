@@ -35,8 +35,8 @@ printf "${Verde}Tiempo actividad: ${NC}\n"
 uptime -p | cut -f 2- -d " "
 echo
 printf "${Verde}Memoria: ${NC}\n"
-echo -e "\n$(free -m | grep -v +)"
+echo "\n$(free -m | grep -v +)"
 echo
 printf "${Verde}Unidades: ${NC}\n"
-echo -e "\n$(df -h| grep 'Filesystem\|^/dev/*')"
+echo "\n$(df -h| grep 'Filesystem\|^/dev/*')"
 echo
