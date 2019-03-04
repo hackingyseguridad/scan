@@ -34,7 +34,7 @@ echo "r) RDP"
 echo "s) Broadcast"
 echo "t) Traceroute"
 echo "v) Vulnerabilidades CVE"
-echo "f) Reporte en pagina Web"
+echo "b) Reporte en pagina Web"
 echo "x) Tor TCP"
 echo "q) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
@@ -112,7 +112,7 @@ echo ""; nmap -iL ip.txt -Pn --open --traceroute  --script=traceroute-geolocatio
 v)
 echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oS resultado.txt; tail resultado.txt
 ;;
-f)
+b)
 echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oX resultado.xml; #xsltproc resultado.xml -o index.html; python -m SimpleHTTPServer 80
 ;;
 x)
