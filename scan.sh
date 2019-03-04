@@ -34,7 +34,7 @@ echo "r) RDP"
 echo "s) Broadcast"
 echo "t) Traceroute"
 echo "v) Vulnerabilidades CVE"
-echo "f) Reporte en pagina Web
+echo "f) Reporte en pagina Web"
 echo "x) Tor TCP"
 echo "q) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
