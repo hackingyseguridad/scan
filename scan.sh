@@ -113,7 +113,7 @@ v)
 echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oS resultado.txt; tail resultado.txt
 ;;
 b)
-echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oX resultado.xml; #xsltproc resultado.xml -o index.html; python -m SimpleHTTPServer 80
+echo ""; nmap -iL ip.txt -Pn --open -sVUT --max-retries 1 -F -O --script=vulners.nse -oX resultado.xml; xsltproc resultado.xml -o index.html; python -m SimpleHTTPServer 80
 ;;
 x)
 echo ""; OIFS=$IFS; IFS=$'\n'; service tor start; proxychains nmap -iL ip.txt --open -sVC -O -oG resultado.txt
