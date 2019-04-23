@@ -2,6 +2,7 @@
 # instalador suite escaneos
 # Se instalaran as utilidades en /sbin/ para poder ser ejecutardo como comandos de Linux
 chmod 777 scan.sh
+wget https://github.com/OCSAF/freevulnsearch/blob/master/freevulnsearch.nse
 apt-get install traceroute whois
 apt-get install masscan
 chmod 777 bgp2ip
