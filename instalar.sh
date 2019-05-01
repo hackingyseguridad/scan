@@ -3,6 +3,7 @@
 # Se instalaran as utilidades en /sbin/ para poder ser ejecutardo como comandos de Linux
 chmod 777 scan.sh
 wget https://github.com/OCSAF/freevulnsearch/blob/master/freevulnsearch.nse
+cp freevulnsearch.nse /usr/share/nmap/scripts/
 apt-get install traceroute whois
 apt-get install masscan
 chmod 777 bgp2ip
