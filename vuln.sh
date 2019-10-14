@@ -1,2 +1,2 @@
 #!/bin/bash
-nmap -Pn -sV --script freevulnsearch.nse --script-args notls=yes $1 $2 $3 $4 $5
+nmap -Pn -sV --script=vulners.nse $1 $2 $3 $4 $5
