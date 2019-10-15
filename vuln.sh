@@ -1,2 +1,2 @@
 #!/bin/bash
-nmap -Pn -sV --script=vulners.nse $1 $2 $3 $4 $5
+nmap -Pn $1 $2 $3 $4 $5 -sS -sV --script=default,vuln -p- -T5 
