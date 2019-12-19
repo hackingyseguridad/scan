@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "*** Telnet Scan v1.0 by www.hackingyseguridad.com ***"
+if [ -z "$1" ]; then
+        echo; echo "Escanea puertos TCP con comando TELNET "; echo "Uso: $0 <IP>"
+        exit 0
+fi
+echo; echo "Escaneo de : " $1; echo
+for puerto in {1..65535}; do echo; echo "IP.;" $1 "Probando puerto TCP.: " $puerto; echo; timeout 3 telnet $1 $puerto; done
