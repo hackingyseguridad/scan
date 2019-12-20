@@ -5,4 +5,4 @@ if [ -z "$1" ]; then
         exit 0
 fi
 echo; echo "Escaneo de : " $1; echo
-for puerto in {1..65535}; do echo; echo "IP.;" $1 "Probando puerto TCP.: " $puerto; echo; timeout 3 telnet $1 $puerto; done
+for puerto in {1..65535}; do echo; echo "IP.;" $1 "Probando puerto TCP.: " $puerto; echo;telnet $1 $puerto &sleep 3; done
