@@ -74,7 +74,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p23 -oG resultado.txt; tail resulta
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p22,2222 -oG resultado.txt; tail resultado.txt
 ;;
 w)
-echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 --script smb-protocols -oN resultado.txt; tail resultado.txt
 ;;
 h)
 echo ""; nmap -iL ip.txt -Pn -p80,81,443,8000,8080,8081,8443,8888 --script http-enum --open -sCV -O -oG resultado.txt; tail resultado.txt
