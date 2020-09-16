@@ -1,0 +1,2 @@
+echo "sh trace IP"
+mtr -n -z -rw $1
