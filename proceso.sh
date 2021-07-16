@@ -2,9 +2,9 @@
 # Ejecuta escaneo de puertos y genera reporte html
 # ps -ALL |grep nmap
 # Uso.: sh proceso.sh IP
-echo ******************
-echo *** proceso.sh *** 
-echo ******************
+echo 
+echo  
+echo 
 
 sudo apt-get install nmap
 sudo apt-get install xsltproc
