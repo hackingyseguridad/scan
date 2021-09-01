@@ -1,0 +1,4 @@
+#!/bin/bash
+for port in $(seq 1 65535); do
+	timeout 1 bash -c "< /dev/tcp/$1/$port" 2>/dev/null && echo "[+] Port $port - OPEN" &
+done; wait
