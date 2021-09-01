@@ -28,7 +28,7 @@ sudo apt-get install xsltproc
 while :
 
 contador=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
-do sudo nmap $1 -iL revisar.txt -Pn -sVC -O --open -p 21,22,23,25,139,222,389,443,445,554,631,966,1023,1723,1080,2022,2222,3389,5222,5900,7443,8080,8443,8888,10000,22222 --open --script=vuln* -oX index.xml -oG $contador
+do sudo nmap $1 -iL cds.txt -Pn -sTUVC -O -T5 --max-retries 0 --open -p 21,22,23,25,53,123,139,161,222,389,443,445,500,554,631,966,1023,1723,1080,2022,2222,3389,5222,5900,7443,8080,8443,8888,10000,22222 --script=vuln* -oX index.xml -oG $contador
 sudo xsltproc index.xml -o /var/www/html/index.html
 echo
 echo "Generaldo fichero con resultado.: "$contador
@@ -37,4 +37,3 @@ echo "Presiona [CTRL+C] para parar..."
 sleep 3
 echo
 done
-
