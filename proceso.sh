@@ -1,5 +1,5 @@
 #!/bin/bash
-# Ejecuta escaneo de puertos y genera reporte html
+# Ejecuta escaneo de puertos y genera reporte.html
 # ps -ALL |grep nmap
 # Uso.: sh proceso.sh IP &
 echo
@@ -14,7 +14,7 @@ cat << "INFO"
  Escaneo de puertos,     ||___________||
  con nmap que convierte,  `-)-------(-'
  el resultado XML a web ,  [=== -- o ]--.
- en formato html .       __'---------'__ \
+ en formato html         __'---------'__ \
                         [::::::::::: :::] )
 http://goo.gl/ID8XBX     `""'"""""'""""`/T\
                                         \_/
@@ -28,8 +28,8 @@ sudo apt-get install xsltproc
 while :
 
 contador=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
-do sudo nmap $1 -iL ip.txt -Pn -sTUVC -O -T5 --max-retries 0 --open -p 21,22,23,25,53,123,139,161,222,389,443,445,500,554,631,966,1023,1723,1080,2022,2222,3389,5222,5900,7443,8080,8443,8888,10000,22222 --script=vuln* -oX index.xml -oG $contador
-sudo xsltproc index.xml -o /var/www/html/index.html
+do sudo nmap $1 -iL ip.txt -Pn -sVC -O --open -p 21,22,23,25,53,123,139,161,222,389,443,445,500,554,631,966,1023,1723,1080,2022,2222,3389,5222,5900,7443,8080,8443,8888,10000,22222 --script=vuln* -oX index.xml -oG $contador
+sudo xsltproc index.xml -o /var/www/html/reporte.html
 echo
 echo "Generaldo fichero con resultado.: "$contador
 echo
