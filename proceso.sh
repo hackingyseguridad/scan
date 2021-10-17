@@ -1,4 +1,6 @@
 #!/bin/bash
+chmod 777 proceso.sh
+# Para ejcutar como proceso: nohup ./proceso.sh &
 # Ejecuta escaneo de puertos y genera reporte.html
 # ps -ALL |grep nmap
 # Uso.: sh proceso.sh IP &
