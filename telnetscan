@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "*** Telnet Scan v1.0 by www.hackingyseguridad.com ***"
+echo "*** Telnet Scan v1.0 hackingyseguridad.com ***"
 if [ -z "$1" ]; then
         echo; echo "Escanea puertos TCP con comando TELNET "; echo "Uso: $0 <IP>"
         exit 0
