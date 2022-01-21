@@ -26,4 +26,6 @@ http://www.network-science.de/ascii/
 https://nmap.org/man/es/man-host-discovery.html
 https://github.com/OCSAF/freevulnsearch
 
+https://nmap.org/man/es/man-bypass-firewalls-ids.html
+
 # www.hackingyseguridad.com
