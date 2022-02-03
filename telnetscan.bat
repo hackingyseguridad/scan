@@ -4,7 +4,7 @@ echo "Uso.: c:/>telnetscan.bat IP"
 set /a puerto=0
 :inicio
 set /a puerto=%puerto%+1
-echo "probando puerto :" %puerto%
+echo "Probando puerto TCP :" %puerto%
 telnet %1 %puerto%
 goto inicio
 exit
