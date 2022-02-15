@@ -1,0 +1,1 @@
+break>Results.txt & (for /l %a in (1,1,49152) do @taskkill /im telnet.exe /f >NUL 2>&1 & @start /b telnet.exe 127.0.0.1 %a & for /f %i in ('netstat -n ^| findstr /r /c:"TCP[ ][ ]*127.0.0.1:%a[ ][ ]*.*ESTABLISHED" ^| findstr /n ".*" ^| findstr "^1:"') do @echo "TCP Port Open: %a" >> Results.txt) & taskkill /im telnet.exe /f >NUL 2>&1
