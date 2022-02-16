@@ -4,8 +4,8 @@ echo "Uso.: c:/>telnetscan.bat IP"
 set /a puerto=0
 :inicio
 set /a puerto=%puerto%+1
-echo "probando puerto :" %puerto% & start /b telnet.exe %1 %puerto%
-REM timeout 3 /nobreak 
 taskkill /im telnet.exe /f >NUL 2>&1 &
+echo "probando puerto :" %puerto% & start /b telnet.exe -f port%puerto%.txt %1 %puerto%
+REM timeout 3 /nobreak 
 goto inicio
 exit
