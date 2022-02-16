@@ -41,7 +41,7 @@ echo "q) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 u)
-echo ""; masscan --rate 9999999999 -iL ip.txt -sS --open-only -n -p0-65535 --ports U:0-65535 -oG resultado.txt; tail resultado.txt
+echo ""; masscan -Pn --rate 199 -iL ip.txt -sS --open-only -n -p0-65535 --ports U:0-65535 -oG resultado.txt; tail resultado.txt
 ;;
 0) nmap -iL ip.txt -Pn --open -sUTV --max-retries 1 -F -O -oG resultado.txt&exit ;;
 1)
@@ -54,7 +54,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -oG resultado.txt;
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p 0-65535 -oG resultado.txt; tail resultado.txt
 ;;
 f)
-echo ""; nmap -iL ip.txt -Pn -g0 --open -sUSCV -O --max-retries 1 -p 0-65535 --defeat-rst-ratelimit --script firewall-bypass -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn -g0 --open -sUTSCV -O --max-retries 1 -p 0-65535 --defeat-rst-ratelimit --script firewall-bypass -oG resultado.txt; tail resultado.txt
 ;;
 4)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p123 --script ntp-monlist -oG resultado.txt; tail resultado.txt
