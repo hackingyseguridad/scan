@@ -73,7 +73,7 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p161 --script snm
 echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p23 -oG resultado.txt; tail resultado.txt
 ;;
 9)
-echo ""; nmap -iL ip.txt -Pn --open -sCV -O -p22,2222 -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn --open -sTCV -O -p22,222,1022,2020,2022,2211,2222,2223,2233,5222,7102,8022,9022,10022,20000,22022,22222,30022 -oG resultado.txt; tail resultado.txt
 ;;
 w)
 echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -p137,138,139,445 --script smb-protocols -oN resultado.txt; tail resultado.txt
