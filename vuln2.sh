@@ -1,6 +1,7 @@
 # consulta vuln en nrich
 
 # https://gitlab.com/shodan-public/nrich
+# https://gitlab.com/shodan-public/nrich/-/releases
 
 # Instalacion en Linux Debian:
 # wget https://gitlab.com/api/v4/projects/33695681/packages/generic/nrich/latest/nrich_latest_amd64.deb
