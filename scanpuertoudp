@@ -1,0 +1,2 @@
+#scanpuertoudp
+nmap -iL todas.txt -p $1 -Pn --open -sU --max-retries 1
