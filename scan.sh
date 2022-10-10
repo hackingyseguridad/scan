@@ -1,4 +1,5 @@
 #!/bin/bash
+# (c) hacking y seguridad .com 2022
 # Version Beta (c) Antonio Taboada 2017
 echo "###############################################################"
 echo "# Script para escaneos de puertos con Nmap: (http://nmap.org) #"
