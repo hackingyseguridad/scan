@@ -1,3 +1,5 @@
+#!/bin/bash
+# (c) hacking y seguridad .com 2022
 # escaneo para detectar puertos filtrados por ACL o Firewall
 # https://nmap.org/book/determining-firewall-rules.html
 # Los resultados con estado unfiltered http son puertos filtrados. con nmap envia ACK  y se obtiene un RST
