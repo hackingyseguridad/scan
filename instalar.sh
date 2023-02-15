@@ -23,6 +23,8 @@ cp scantcp /sbin/
 apt-get install nmap
 git clone https://github.com/vulnersCom/nmap-vulners.git
 git clone https://github.com/scipag/vulscan scipag_vulscan
+ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
 echo
-echo "Instalacion finalizada."
+echo "Instalacion finalizada !!!."
+echo
 echo
