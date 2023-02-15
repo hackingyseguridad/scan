@@ -22,6 +22,7 @@ cp tracebgp /sbin/
 cp scantcp /sbin/
 apt-get install nmap
 git clone https://github.com/vulnersCom/nmap-vulners.git
+git clone https://github.com/scipag/vulscan scipag_vulscan
 echo
 echo "Instalacion finalizada."
 echo
