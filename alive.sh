@@ -1,1 +1,1 @@
-masscan 172.0.0.0/8 --rate 1000 --ping -e eth0 
+masscan -iL ip.txt --rate 9999 --ping -n --randomize-hosts -v -e wlan0
