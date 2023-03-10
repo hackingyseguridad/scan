@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script para rastrear todas las rutas y escanerar todo los activos de los saltos que encuentra
+# Script para rastrear rutas y escanerar los activos de los saltos que encuentra en la red
 # Funciona en IPv4 e IPv6
 # Lee del fichero ip.txt la lista de IP, entrega el resultado en el fichero resultado.txt
 # Uso: sh rastreador.sh
