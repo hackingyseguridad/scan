@@ -10,7 +10,7 @@ echo
 grep -Eo "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" ip.txt > ips.txt
 
 # Extrae IP de las rutas
-for n in `cat ips.txt`; do echo $n; traceroute -A -n -d -N 99 $n; done > resultado1.txt
+for n in `cat ips.txt`; do echo $n; traceroute -A -n -d -N 64 $n; done > resultado1.txt
 
 # filtra IP del resto de texto y caracteres y genera resutado2.txt
 grep -Eo "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" resultado1.txt > resultado2.txt
