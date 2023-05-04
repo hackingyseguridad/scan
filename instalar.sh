@@ -5,7 +5,8 @@ chmod 777 scan.sh
 wget https://github.com/OCSAF/freevulnsearch/blob/master/freevulnsearch.nse
 cp freevulnsearch.nse /usr/share/nmap/scripts/
 apt-get install traceroute whois
-apt-get install masscan
+apt-get -y install libpcap-dev
+apt-get -y install masscan
 chmod 777 bgp2ip
 chmod 777 ip2bgp
 chmod 777 ip2pais
