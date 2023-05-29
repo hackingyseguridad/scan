@@ -1,1 +1,2 @@
 masscan -Pn --rate 99 -iL ipv6.txt --open-only -n -p$1 -n --randomize-hosts -v -i eth1
+nmap -iL ipv6.txt -6 -p$1 --open -n --randomize-hosts -e eth1
