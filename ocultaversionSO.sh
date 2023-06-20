@@ -1,6 +1,8 @@
-
-
-
+#!/bin/bash
+# Script para ocultar la version del SO Linux 
+# 
+# Uso: sh ocultaversionSO.sh
+# (C) hackingyseguridad.com 2023
 echo
 echo "Ocultar la versión del SO, fingerprint, Sistema Operativo Linux utilizado con el tamaño del TTL"
 echo 
