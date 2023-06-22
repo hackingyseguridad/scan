@@ -19,6 +19,7 @@ echo "0) Rapido: 100 puertos udp/tcp como proceso Linux"
 echo "1) Rapido: 100 puertos udp/tcp"
 echo "2) Normal: 1000 puertos udp/tcp"
 echo "3) Completo: 65535 puertos tcp"
+echo "k) Knock puerto"
 echo "f) Saltar firewall"
 echo "4) NTP"		
 echo "5) DNS"
@@ -56,6 +57,9 @@ echo ""; nmap -iL ip.txt -Pn --open -sUTCV -O --max-retries 1 -oG resultado.txt;
 ;;
 3)
 echo ""; nmap -iL ip.txt -Pn --open -sTCV -O --max-retries 1 -p 0-65535 -oG resultado.txt; tail resultado.txt
+;;
+k)
+echo ""; nmap -iL ip.txt  -r --max-retries 0 --max-parallelism 1 -sT --scan-delay 200ms --max-rtt-timeout 200ms -Pn --open -oG resultado.txt; tail resultado.txt
 ;;
 f)
 echo ""; nmap -iL ip.txt -Pn -g0 --open -sACV  -T4 -f -O --max-retries 1 -p 0-65535 --defeat-rst-ratelimit --script firewall-bypass -oG resultado.txt; tail resultado.txt
