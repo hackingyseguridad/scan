@@ -1,2 +1,2 @@
-sudo masscan -Pn --rate 99 -iL todas.txt -sS --open-only -n -p$1 -n --randomize-hosts -v
-masscan -Pn --rate 99 -iL todas.txt --open-only -n -p$1 -n --randomize-hosts -v -i eth0 
+masscan -Pn --rate 99 -iL todas.txt -sS --open-only -n -p$1 -n --randomize-hosts -v
+masscan -Pn --rate 99 -iL todas.txt --open-only -n -p$1 -n --randomize-hosts -v 
