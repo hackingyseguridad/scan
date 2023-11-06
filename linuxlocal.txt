@@ -54,9 +54,9 @@ SECRETOS ( password, claves )
 
 18º.- 
 
-19º.- Tiempo de actividad:
-printf "${Verde}Tiempo actividad: ${NC}\n"
-uptime -p | cut -f 2- -d " "
+CIFRADOS 
+
+19º.- 
 
 20º.- Carga promedio: 
 printf "${Verde}Carga promedio: ${NC}\n"
