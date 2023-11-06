@@ -19,6 +19,7 @@ AUTENTICACION:
 7º.- fichero etc/sudo - Escalado de privilegios, configuraciones especificas para elevar privilegios
 
 8º.- whoami, usuario actual y privlegios, para ejecturar scripts en bash shell, python, etc.. y posibilidad de instalar y ejecutar ./lynis audit system
+echo "Usuarios logueados:\n$(who)"
 
 9º.- fichero etc/ldap - que LDAP esta configurado para autenticar y mecanismos en de bloqueo en el LDAP para fuerxza bruta.
 
