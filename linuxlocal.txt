@@ -52,7 +52,9 @@ echo "Mascara: " $(ifconfig |grep netmask)
 
 18º.- 
 
-19º.-
+19º.- Tiempo de actividad:
+printf "${Verde}Tiempo actividad: ${NC}\n"
+uptime -p | cut -f 2- -d " "
 
 20º.- Carga promedio: 
 printf "${Verde}Carga promedio: ${NC}\n"
