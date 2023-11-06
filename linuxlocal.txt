@@ -44,11 +44,13 @@ PUERTOS TCP/UDP Y SERVICIOS ACTIVOS:
 
 16º.- netstat -anv, conexiones establecidas y puretos abiertos escuchando!
 
-17º.- ps -ALL, procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh  /etc/ssh/sshd_conf
+17º.- echo "Mascara: " $(ifconfig |grep netmask)
 
-18º.-
+18º.- ps -ALL, procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh  /etc/ssh/sshd_conf
 
 19º.-
+
+20º.-
 
 20º.- 
 
