@@ -50,6 +50,8 @@ echo "Mascara: " $(ifconfig |grep netmask)
 
 17º.- ps -ALL, procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh  /etc/ssh/sshd_conf
 
+SECRETOS ( password, claves )
+
 18º.- 
 
 19º.- Tiempo de actividad:
