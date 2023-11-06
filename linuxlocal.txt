@@ -1,0 +1,52 @@
+Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, solo con comandos Linux
+
+SISTEMA
+
+Versión de SO y Kernel, uname -a 
+
+Versión de sudo y vulnerabilidades, sudo -V
+
+AUTENTICACION
+
+Usuarios, grupos y privilegios en local: 
+
+fichero etc/password - usuarios que pueden abrir una vengana shell,
+
+fichero etc/group - Mecanismos en de bloqueos para fuerza bruta usuarios locales
+
+fichero etc/shadow
+
+fichero etc/sudo - Escalado de privilegios, configuraciones especificas para elevar privilegios
+
+whoami, usuario actual y privlegios, para ejecturar scripts en bash shell, python, etc.. y posibilidad de instalar y ejecutar ./lynis audit system
+
+fichero etc/ldap - que LDAP esta configurado para autenticar y mecanismos en de bloqueo en el LDAP para fuerxza bruta.
+
+CARPETAS e informaión
+
+carpetas /home - Carpetas personales y seguridad entre usuarios
+
+IP:
+
+ifconfig -ALL, interfaces y direcciones asigandas entre ellos:
+
+INTERNET: 
+
+ping 8.8.8.8, salida a internet 
+
+traceroute 194.179.1.100 salida a traves de donde
+
+cat etc/resolv DNS configurados!
+
+PUERTOS TCP/UDP Y SERVICIOS ACTIVOS:
+
+ss -anv, conexiones establecidas y puertos abiertos!
+
+netstat -anv, conexiones establecidas y puretos abiertos escuchando!
+
+ps -ALL, procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh
+/etc/ssh/sshd_conf
+
+https://www.cvedetails.com/
+
+http://www.hackingyseguridad.com/
