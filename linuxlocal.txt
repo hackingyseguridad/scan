@@ -50,11 +50,13 @@ echo "Mascara: " $(ifconfig |grep netmask)
 
 17º.- ps -ALL, procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh  /etc/ssh/sshd_conf
 
-18º.-
+18º.- 
 
 19º.-
 
-20º.- 
+20º.- Carga promedio: 
+printf "${Verde}Carga promedio: ${NC}\n"
+cat /proc/loadavg | cut -f 1-3 -d '
 
 
 https://www.cvedetails.com/
