@@ -1,4 +1,4 @@
-Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, solo con comandos Linux
+20 puntos para analizar sistema desde el SO; Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, con comandos Linux;
 
 SISTEMA:
 
