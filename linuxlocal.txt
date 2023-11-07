@@ -1,52 +1,151 @@
-20 puntos para analizar sistema desde el SO; Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, con comandos Linux;
+Puntos para analizar un sistema desde el SO; Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, con comandos Linux;
 
-SISTEMA:
+1.- SISTEMA:
 
-1º.- Versión de SO y Kernel, y vuln
+- Versión de SO y Kernel, y vuln https://www.cvedetails.com/
+
 uname -a
-uname -m
-uname -r
-https://www.cvedetails.com/
 
-2º.- Versión de sudo y vulnerabilidades, Vuln a escalado de privilegios, desde la 1.8.2, hasta la 1.8.31p2 y desde la 1.9.0, hasta la 1.9.5p1
+- Versión de sudo y vulnerabilidades, Vuln a escalado de privilegios, desde la 1.8.2, hasta la 1.8.31p2 y desde la 1.9.0, hasta la 1.9.5p1
+
 sudo -V  
 
-AUTENTICACION:
+Version de ssh
 
-3º.- Usuarios, grupos y privilegios en local: 
+ssh -V
+
+Version de apache
+
+apache -V 
+
+Versión de openssl version
+
+openssl version
+
+2.- AUTENTICACION:
+
+- Usuarios, grupos y privilegios en local: 
+
 cat /etc/passwd - usuarios que pueden abrir una vengana shell,
+
 cat /etc/group - usuarios agregados a que grupos!
-cat /etc/shadow - usuarios y claves cifradas -  - solo deberia ser visible el contenido si somos SuperUser, root!
 
-mecanismos en de bloqueos para fuerza bruta usuarios locales
+cat /etc/shadow - usuarios y claves cifradas en SHA -  - solo deberia ser visible el contenido si somos SuperUser, root!
 
-6º.- fichero /etc/shadow
+- fichero etc/ldap - que LDAP esta configurado para autenticar y mecanismos en de bloqueo en el LDAP para fuerxza bruta.
 
-7º.- fichero etc/sudo - Escalado de privilegios, configuraciones especificas para elevar privilegios
+cat etc/ldap/ldap.conf
 
-8º.- whoami, usuario actual y privlegios, para ejecturar scripts en bash shell, python, etc.. y posibilidad de instalar y ejecutar ./lynis audit system
-echo "Usuarios logueados:\n$(who)"
+- Mecanismos en de bloqueos para fuerza bruta usuarios locales
 
-9º.- fichero etc/ldap - que LDAP esta configurado para autenticar y mecanismos en de bloqueo en el LDAP para fuerxza bruta.
+ssh admin@localhost, ssh antonio@localhost o telnet localhost o login web..
 
-CARPETAS e informaión:
+- usuario actual y privlegios, para ejecturar scripts en bash shell, python, etc.. y posibilidad de instalar y ejecutar ./lynis audit system
 
-10º.- carpetas /home - Carpetas personales y seguridad entre usuarios
+whoami
 
-IP:
+who
 
-11º.- interfaces y direcciones asigandas entre ellos: 
+- escalado de privilegios, configuraciones especificas para elevar privilegios
+
+sudo su, su, sesu, permite elevar privilegios a SuperUser, sobre el usaurio actual
+
+cat /etc/sudoers  , fichero de configuracion sudoers
+
+cat /etc/group, usarios añadidos en el grupo "sudo"
+
+3.- CARPETAS e informaión:
+
+- carpetas /home - Carpetas personales y seguridad entre usuarios
+ls /home
+
+4.- IP:
+
+- interfaces y direcciones asigandas entre ellos: 
+
 ifconfig
+
 route
-arp -a 
 
-INTERNET: 
+arp
 
-12º.- salida a internet
-ping 8.8.8.8
+echo "Vecinos IPv6: " && ip -6 neigh
+
+5.- INTERNET: 
+
+- salida a internet
+
+ping 8.8.8.8 
+
+traceroute hackingyseguridad.com
+
+traceroute ngrok.io -T -p 443 -A
+
 wget http://ipinfo.io/ip -qO -
 
-13º.- Ruta de salida a internet a traves de donde
+nslookup ngrok.io
+
+6.- RUTA
+
+- ruta de salida a internet a traves de donde
+
+ip route show
+
+ip route list
+
+traceroute -A 194.179.1.100 
+
+echo "Ver routas" && route -A inet -A inet6
+
+7.- DNS configurados!
+
+cat /etc/resolv.conf
+
+cat /etc/resolv.conf | grep 'nameserver' | awk '{print $2}'
+
+8.- PUERTOS TCP/UDP Y SERVICIOS ACTIVOS:
+
+ss -an, conexiones establecidas y puertos abiertos!
+
+netstat -anv, conexiones establecidas y puretos abiertos escuchando!
+
+echo "Mascara: " $(ifconfig |grep netmask)
+
+procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh  /etc/ssh/sshd_conf
+
+ps -ALL
+
+9.- SECRETOS ( password, claves )
+
+find / -name "passwd"
+
+grep  -Hrn "passwd" /
+
+find / -type f -exec grep -H user {} \;
+
+grep -r user /*
+
+10.- CIFRADOS: 
+
+Cifrados soportados por la version OpenSSL
+
+openssl ciphers
+
+11º.- INFORMACION RECURSOS Y CARGA: 
+
+echo "Carga promedio" && cat /proc/loadavg | cut -f 1-3 -d ' '
+
+echo "memoria RAM: ",  "\n$(free -m | grep -v +)"
+
+echo "Unidades de disco:", "\n$(df -h| grep 'Filesystem\|^/dev/*')"
+
+echo "Tiempo de actividad.: " && uptime -p | cut -f 2- -d " "
+
+
+http://www.hackingyseguridad.com/
+
+
+
 traceroute -A 194.179.1.100 
 
 14º.- DNS configurados!
