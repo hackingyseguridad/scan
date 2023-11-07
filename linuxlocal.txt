@@ -109,6 +109,8 @@ ss -tulnp , conexiones establecidas y puertos abiertos!
 
 netstat -pnltu  , conexiones establecidas y puretos abiertos escuchando!
 
+lsof -i , conexiones establecidas 
+
 echo "Mascara: " $(ifconfig |grep netmask)
 
 procesos abiertos
