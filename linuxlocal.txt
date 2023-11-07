@@ -1,4 +1,4 @@
-Puntos para analizar un sistema desde el SO; Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, con comandos Linux;
+ Puntos para analizar un sistema desde el SO; Analisis de vulnerabilidades desde dentro de un sistema sin herramientas!, con comandos Linux;
 
 1.- SISTEMA:
 
