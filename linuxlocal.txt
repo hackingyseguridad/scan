@@ -105,13 +105,13 @@ cat /etc/resolv.conf | grep 'nameserver' | awk '{print $2}'
 
 8.- PUERTOS TCP/UDP Y SERVICIOS ACTIVOS:
 
-ss -an, conexiones establecidas y puertos abiertos!
+ss -tulnp , conexiones establecidas y puertos abiertos!
 
-netstat -anv, conexiones establecidas y puretos abiertos escuchando!
+netstat -pnltu  , conexiones establecidas y puretos abiertos escuchando!
 
 echo "Mascara: " $(ifconfig |grep netmask)
 
-procesos abiertos, vermos las opciones de configuración en servicios de acceso remoto, p.ej. ssh  /etc/ssh/sshd_conf
+procesos abiertos
 
 ps -ALL
 
