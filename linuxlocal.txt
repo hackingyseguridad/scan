@@ -133,9 +133,9 @@ grep -r user /*
 
 10.- CIFRADOS: 
 
-Cifrados soportados por la version OpenSSL
+Cifrados soportados por la version OpenSSL, openssl ciphers
 
-openssl ciphers
+Ver cifrados ofrecido SSHd,  cat /etc/ssh/sshd_config
 
 11º.- INFORMACION RECURSOS Y CARGA: 
 
