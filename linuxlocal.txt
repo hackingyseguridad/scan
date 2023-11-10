@@ -85,6 +85,8 @@ wget http://ipinfo.io/ip -qO -
 
 nslookup ngrok.io
 
+Comando netcat, nc -knvp 9999
+
 6.- RUTA
 
 - ruta de salida a internet a traves de donde
