@@ -65,6 +65,8 @@ ls /home
 
 ifconfig
 
+ip route list
+
 route
 
 arp
