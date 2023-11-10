@@ -105,6 +105,8 @@ echo "Ver routas" && route -A inet -A inet6
 
 cat /etc/resolv.conf
 
+cat /etc/hosts
+
 cat /etc/resolv.conf | grep 'nameserver' | awk '{print $2}'
 
 8.- PUERTOS TCP/UDP Y SERVICIOS ACTIVOS:
