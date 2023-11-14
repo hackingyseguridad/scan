@@ -34,7 +34,7 @@ cat /etc/shadow - usuarios y claves cifradas en SHA -  - solo deberia ser visibl
 
 - fichero etc/ldap - que LDAP esta configurado para autenticar y mecanismos en de bloqueo en el LDAP para fuerxza bruta.
 
-cat etc/ldap/ldap.conf
+cat /etc/openldap/ldap.conf
 
 - Mecanismos en de bloqueos para fuerza bruta usuarios locales
 
@@ -64,6 +64,8 @@ ls /home
 - interfaces y direcciones asigandas entre ellos: 
 
 ifconfig
+
+ip link show
 
 ip route list
 
