@@ -25,7 +25,6 @@ echo
 echo
 
 mkdir /var/www/html/reports
-sudo apt-get install nmap
 sudo apt-get install xsltproc
 sudo apt-get install masscan
 
