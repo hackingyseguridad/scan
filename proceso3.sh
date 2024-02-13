@@ -2,7 +2,8 @@
 # Para ejcutar como proceso: nohup ./proceso3.sh &
 # Ejecuta escaneo de puertos y genera reporte informe3.htm
 # ps -ALL |grep nmap
-# Uso.: sh proceso.sh IP &
+# chmod 777 proceso3.sh
+# Uso.: nohup ./proceso3.sh IP &
 echo
 cat << "INFO"
 
