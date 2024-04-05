@@ -1,2 +1,4 @@
 
 nmcli -p device show
+
+curl -s ipecho.net/plain;echo "  "
