@@ -1,4 +1,4 @@
 
 nmcli -p device show
-
+curl -k https://ip.ntp.dev
 curl -s ipecho.net/plain;echo "  "
