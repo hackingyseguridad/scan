@@ -1,13 +1,12 @@
 echo "hackingyseguridad.com 2024"
 echo "chequea IP con proxy http abierto!"
 echo
-echo "sh openproxy.sh"
-echo "lee fichero ip.txt"
+echo
 echo
 for n in `cat ip.txt`
 
 do
-        if timeout 1 curl -x http://$n:8081  -k -s "http://hackingyseguridad.com/security.txt" \
+        if timeout 1 curl -x http://$n:8081 -k --silent "http://hackingyseguridad.com//security.txt"  \
 -H 'Pragma: no-cache' \
 -H 'Cache-Control: no-cache' \
 -H 'Upgrade-Insecure-Requests: 1' \
@@ -18,3 +17,4 @@ do
         then echo $n && echo
         fi
 done
+
