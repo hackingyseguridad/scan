@@ -1,6 +1,6 @@
 echo "hackingyseguridad.com 2024"
 echo "chequea IP con proxy http abierto!"
-echo
+echo "Puertos TCP habituales Proxy; 3128,8000,8080,8081,8888"
 echo
 echo
 for n in `cat proxy.txt`
