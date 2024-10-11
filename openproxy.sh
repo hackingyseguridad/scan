@@ -3,10 +3,9 @@ echo "chequea IP con proxy http abierto!"
 echo
 echo
 echo
-for n in `cat ip.txt`
-
-do
-        if timeout 1 curl -x http://$n:8081 -k --silent "http://hackingyseguridad.com//security.txt"  \
+for n in `cat proxy.txt`
+do 
+        timeout 3;  curl -x http://$n:8081 -k --silent "http://ipecho.net/plain" \
 -H 'Pragma: no-cache' \
 -H 'Cache-Control: no-cache' \
 -H 'Upgrade-Insecure-Requests: 1' \
@@ -14,7 +13,5 @@ do
 -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' \
 -H 'Accept-Encoding: gzip, deflate, br' \
 -H 'Accept-Language: es-ES,es;q=0.9,en;q=0.8' \
-        then echo $n && echo
-        fi
 done
 
