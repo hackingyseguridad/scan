@@ -1,7 +1,7 @@
 echo "hackingyseguridad.com 2024"
 echo "chequea IP con proxy http abierto!"
 echo "Puertos TCP habituales Proxy; 3128,8000,8080,8081,8888"
-echo "curl --socks5 IP_proxy:8888 hackingyseguridad.com"
+echo "timeout 5 curl -x socks5://IP_proxy:8888 hackingyseguridad.com"
 echo
 echo
 for n in `cat proxy.txt`
