@@ -1,4 +1,4 @@
 # escanea Proxyes abiertos
 
-nmap -Pn $1 $2 $3 --script=http-open-proxy,socks-open-proxy -p 8123,8080,8000,3128,8081 -sV 
+nmap -Pn $1 $2 $3 --script=http-open-proxy,socks-open-proxy -p 1080,8080,8000,3128,8081,8888 -sV 
 
