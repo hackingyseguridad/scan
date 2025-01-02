@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://github.com/nmap/nmap/tree/master/scripts
 # https://github.com/scipag/vulscan
 # https://github.com/vulnersCom/nmap-vulners
 
