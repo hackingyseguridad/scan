@@ -3,16 +3,20 @@
 # https://github.com/scipag/vulscan
 # https://github.com/vulnersCom/nmap-vulners
 
-rm scipag_vulscan -R
-git clone https://github.com/scipag/vulscan scipag_vulscan
-ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
-
+echo
+echo "actualizando vulners"
 rm nmap-vulners -R
 git clone https://github.com/vulnersCom/nmap-vulners
 ln -s `pwd`/nmap-vulners /usr/share/nmap/scripts/nmap-vulners
-sudo nmap --script-updatedb
 
-nmap -iL ip.txt -Pn $1 $2 $3 $4 $5 -sS -sV --script=default,vuln -p- -T5
-nmap -iL ip.txt -Pn --open -sVUT -F -O  --defeat-rst-ratelimit --script=nmap-vulners/vulners.nse
-nmap -iL ip.txt -Pn --open -sVUT -F -O  --defeat-rst-ratelimit --script=vulscan/vulscan.nse --script-args vulscandb=cve.csv
+echo "actualizando vulnscan"
+rm scipag_vulscan -R
+git clone https://github.com/scipag/vulscan scipag_vulscan
+ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
+echo
+sudo nmap --script-updatedb
+echo
+nmap $1 -Pn --open  $2 $3 $4 $5 -sV --script=default,vuln -p- -T5
+nmap $1 -Pn --open -sV -F -O  --defeat-rst-ratelimit --script=nmap-vulners/vulners.nse
+nmap $1 -Pn --open -sV -F -O  --defeat-rst-ratelimit --script=vulscan/vulscan.nse --script-args vulscandb=cve.csv
 
