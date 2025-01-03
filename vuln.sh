@@ -1,4 +1,5 @@
 #!/bin/bash
+# Esaneo de puertos/servicios y vulnerabilidades conocidas. 
 cat << "INFO"
 
 (:`--..___...-''``-._             |`._
