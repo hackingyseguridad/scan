@@ -3,6 +3,8 @@
 # https://github.com/scipag/vulscan
 # https://github.com/vulnersCom/nmap-vulners
 # https://github.com/scmanjarrez/CVEScannerV2/
+# https://github.com/scmanjarrez/CVEScannerV2DB/
+
 sudo apt-get install lua5.1; sudo apt-get install lua-sql-sqlite3
 
 echo
