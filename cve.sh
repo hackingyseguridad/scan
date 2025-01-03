@@ -18,6 +18,11 @@ rm scipag_vulscan -R
 git clone https://github.com/scipag/vulscan scipag_vulscan
 ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
 
+echo "actualizando CVEScannerV2"
+rm CVEScannerV2 -R
+git clone https://github.com/scmanjarrez/CVEScannerV2
+ln -s `pwd`/CVEScannerV2 /usr/share/nmap/scripts/CVEScannerV2
+
 echo
 sudo nmap --script-updatedb
 
