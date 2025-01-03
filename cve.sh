@@ -22,7 +22,7 @@ sudo nmap --script-updatedb
 echo
 nmap $1 -Pn --open  $2 $3 $4 $5 -sV --script=default,vuln -p- -T5
 echo "###"
-nmap $1 -Pn --open  $2 $3 $4 $5 -sV -F -O  --defeat-rst-ratelimit --script=nmap-vulners/vulners.nse
+nmap $1 -Pn --open  $2 $3 $4 $5 -sV -F -O  --defeat-rst-ratelimit --script=nmap-vulners/vulners.nse --script-args mincvss=5.0
 echo "###"
 nmap $1 -Pn --open  $2 $3 $4 $5 -sV -F -O  --defeat-rst-ratelimit --script=vulscan/vulscan.nse --script-args vulscandb=cve.csv
 echo "###"
