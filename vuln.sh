@@ -19,4 +19,4 @@ if [ -z "$1" ]; then
 fi
 echo
 echo
-nmap -Pn $1 $2 $3 $4 $5 -sVC -O --script=banner,vuln,vulners --script-args mincvss=7 -p- --open 
+nmap -Pn $1 $2 $3 $4 $5 -sVC -O --script=default,banner,vuln,vulners --script-args mincvss=7 -p- --open
