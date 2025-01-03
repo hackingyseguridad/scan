@@ -1,2 +1,2 @@
 #!/bin/bash
-nmap -Pn $1 $2 $3 $4 $5 -sS -sV --script=default,vuln -p- -T5 
+nmap -Pn $1 $2 $3 $4 $5 -sV --script=default,vuln,vulners --script-args mincvss=7 -p- --open
