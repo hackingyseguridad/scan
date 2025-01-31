@@ -6,6 +6,7 @@ echo
 # --min-rate 300  , envia 300 peticiones por segundo. PPs.
 # -T4 para dar ago mas de velocidad escaneo, solo con buena conexión a interet
 # -T5 modo agresivo, para dar maxima velocidad al escaneo. En LAN o con muy buena conexion internet
+# -6 para IpV6
 
 nmap -iL ip.txt -PE -T4 --min-rate 300 -p 22 -oN resultado_IPv4.txt
 
