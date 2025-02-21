@@ -10,7 +10,7 @@ cat << "INFO"
                           _____________
                          |.-----------.|
  hackingyseguridad.com   ||     _     ||
-    (c) 2021             ||   (\o/)   ||
+    (c) 2025             ||   (\o/)   ||
                          ||    /_\    ||
  Escaneo de puertos,     ||___________||
  con nmap que convierte,  `-)-------(-'
