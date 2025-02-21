@@ -36,6 +36,12 @@ echo "Generaldo fichero con resultado.: "$contador
 echo
 cp $contador resultado.txt
 rm $contador
+
+# file="resultado.txt"
+#if grep -q "CVE" "$file"; then
+# echo "Vulnerabilidades CVE" | mail -s "Alerta: CVE encontrado" admin@localhost
+# fi
+
 echo
 echo "Presiona [CTRL+C] para parar..."
 sleep 3
