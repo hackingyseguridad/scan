@@ -1,20 +1,25 @@
 #!/bin/sh
-echo "\033[1;37mhackingyseguridad.com\033[0m"
 #
-#  
 #
-echo 
+#
+#
+echo
+echo
+echo "\033[1;37mhttp://www.hackingyseguridad.com/\033[0m"
+echo
 echo
 echo "Escanea sistemas operativos...!"
-echo 
-echo
-nmap -Pn $1 $2 $3 -p 135,139,445 --randomize-hosts --max-retries 1 -n --open -O --osscan-guess $0 -oN resultado.txt
 echo
 echo
-echo "= RESUMEN ==================================================================="
+nmap -Pn $1 $2 $3  -sV -F --randomize-hosts -n -O --osscan-guess $0 -oN resultado.txt | sed -n '
+/Nmap scan report for/ {h}
+/OS details\|Aggressive OS guesses/ {x;G;s/\n/: /;p}
+'
 echo
-
-
+echo
+# echo "= RESUMEN ==================================================================="
+echo
+'
 
 
 
