@@ -21,16 +21,18 @@ if [ -z "$1" ]; then
         exit 0
 fi
 echo
-echo
 echo "Escaneaabdo sistemas operativos...!"
 echo
+nmap -Pn $1 $2 $3 -F --randomize-hosts -n -O --osscan-guess $0 -oG resultado.txt
 echo
-nmap -Pn $1 $2 $3 -sV -p 445,135,139 --randomize-hosts -n -O --osscan-guess $0 -oG resultado.txt
+echo "======================= RESULTADO ========================="
 echo
+cat resultado.txt | awk '
+/Host:/ {ip=$2}
+/OS:/ {print ip ": " substr($0, index($0, "OS:")+3)}
+'
 echo
-echo "=======================RESUKTADO======================"
-echo
-cat resultado.txt
+
 
 
 
