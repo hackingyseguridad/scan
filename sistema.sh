@@ -1,5 +1,6 @@
 #!/bin/bash
 # Esaneo de sistema operativo y version.
+# (R) Antonio Taboada, 2025
 echo
 cat << "INFO"
 
@@ -13,9 +14,9 @@ cat << "INFO"
 INFO
 if [ -z "$1" ]; then
         echo
-        echo "Esaneo de puertos/servicios y vulnerabilidades conocidas."
+        echo "Esaneo de sistema operativo y version."
         echo "Requiere nmap"
-        echo "Uso.: sh vuln.sh <ip>"
+        echo "Uso.: sh sistema.sh <ip>"
         echo
         echo "\033[1;37mhttp://www.hackingyseguridad.com/\033[0m"
         exit 0
@@ -32,10 +33,3 @@ cat resultado.txt | awk '
 /OS:/ {print ip ": " substr($0, index($0, "OS:")+3)}
 '
 echo
-
-
-
-
-
-
-
