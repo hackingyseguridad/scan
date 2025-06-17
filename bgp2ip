@@ -1,8 +1,14 @@
-#!/bin/bash
-# Muestra los rangos IP de un AS 
+#!/bin/sh
+# Muestra los rangos IP de un AS
 # (c) hackingyseguridad.com 2017
 # Uso: ./bgp2ip AS
 echo Uso: ./bgp2ip AS
-whois -h whois.radb.net -i origin $1 | awk '/^route:/ {print $2;}' | sort | uniq
-whois -h whois.radb.net -i origin $1 | awk '/^route6:/ {print $2;}' | sort | uniq
+
+AS_NUMBER=$1
+
+echo "Rangos IPv4 para AS$AS_NUMBER:"
+whois -h whois.radb.net -- '-i origin AS'$AS_NUMBER | grep '^route:' | awk '{print $2}'
+
+echo "\nRangos IPv6 para AS$AS_NUMBER:"
+whois -h whois.radb.net -- '-i origin AS'$AS_NUMBER | grep '^route6:' | awk '{print $2}'
 
