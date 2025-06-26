@@ -15,7 +15,7 @@ IP de un AS
 AS de un IP
 ### ip2bgp IP
 
-## TOP PUERTOS **********************
+### TOP PUERTOS ***
 
 Top20 puetos TCP para escaneo fast:21,22,23,25,53,80,139,389,443,554,445,631,966,1023,1723,1080,3389,5900,8080,8443,10000
 
