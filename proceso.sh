@@ -29,7 +29,7 @@ sudo apt-get install xsltproc
 
 while :
 contador=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
-do nmap $1 -iL ip.txt -F -PE -sTV --open -n --defeat-rst-ratelimit --randomize-hosts --max-retries 2 -O --osscan-guess $0 --min-rate 1000 --script=default,banner,vuln,vulners --script-args mincvss=8  -oN $contador -oX index.xml
+do nmap $1 -iL ip.txt -PE -sTV --open -n --defeat-rst-ratelimit --randomize-hosts --max-retries 2 -O --osscan-guess $0 --min-rate 100 --script=default,banner,vuln,vulners --script-args mincvss=8  -oN $contador -oX index.xml
 # do nmap $1 -iL ip.txt -Pn -sV -O --open --defeat-rst-ratelimit --script=default,banner,vuln,vulners --script-args mincvss=8 -oX index.xml -oN $contador
 sudo xsltproc index.xml -o /var/www/html/reports/informe.htm
 echo
