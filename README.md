@@ -26,6 +26,9 @@ TopSSH puertos:
 TopVPN puertos: 
 500,1194,1500,1701,1723,4500,51820
 
+TopBackdoor puertos:
+4444,31337,8081,12345,54321,60001,47145,27017,11211,20000,32764,49152,65535
+
 #
 http://www.hackingyseguridad.com/
 #
