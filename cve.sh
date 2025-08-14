@@ -4,6 +4,7 @@
 # https://github.com/vulnersCom/nmap-vulners
 # https://github.com/scmanjarrez/CVEScannerV2/
 # https://github.com/scmanjarrez/CVEScannerV2DB/
+# https://github.com/roomkangali/DursVulnNSE
 
 sudo apt-get install lua5.1; sudo apt-get install lua-sql-sqlite3
 
@@ -34,5 +35,7 @@ echo "###"
 nmap $1 -Pn --open  $2 $3 $4 $5 -sV -F -O  --defeat-rst-ratelimit --script=vulscan/vulscan.nse --script-args vulscandb=cve.csv
 echo "###"
 nmap $1 -sV --open  $2 $3 $4 $5 -sV -F -O  --defeat-rst-ratelimit  --script=CVEScannerV2/cvescannerv2.nse
+echo "###"
+nmap $1 -sV --open  $2 $3 $4 $5 -sV -F -O  --defeat-rst-ratelimit --script =dursvuln.nse
 
 
