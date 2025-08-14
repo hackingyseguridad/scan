@@ -26,6 +26,7 @@ ln -s `pwd`/CVEScannerV2 /usr/share/nmap/scripts/CVEScannerV2
 
 echo "actualizando dursvuln"
 git clone https://github.com/roomkangali/DursVulnNSE
+ln -s `pwd`/DursVulnNSE /usr/share/nmap/scripts/DursVulnNSE
 
 echo
 sudo nmap --script-updatedb
