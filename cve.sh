@@ -24,6 +24,9 @@ rm CVEScannerV2 -R
 git clone https://github.com/scmanjarrez/CVEScannerV2
 ln -s `pwd`/CVEScannerV2 /usr/share/nmap/scripts/CVEScannerV2
 
+echo "actualizando dursvuln"
+git clone https://github.com/roomkangali/DursVulnNSE
+
 echo
 sudo nmap --script-updatedb
 
