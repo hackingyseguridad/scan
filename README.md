@@ -29,6 +29,8 @@ TopVPN puertos:
 TopBackdoor puertos:944
 4444,31337,8081,12345,54321,60001,47145,27017,11211,20000,32764,49152,65535
 
+TopPostgreSQL puertos: 5432,5433,1433,3306,106
+
 #
 http://www.hackingyseguridad.com/
 #
