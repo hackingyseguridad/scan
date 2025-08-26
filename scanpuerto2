@@ -1,2 +1,2 @@
-masscan -Pn --rate 99 -iL todas.txt -sS --open-only -n -p$1 -n --randomize-hosts -v  --osscan-guess --min-rate 999
-masscan -Pn --rate 99 -iL todas.txt --open-only -n -p$1 -n --randomize-hosts -v --osscan-guess --min-rate 999
+masscan -Pn --rate 99 -iL todas.txt -sS --open-only -n -p$1 -n --randomize-hosts -v --min-rate 999
+masscan -Pn --rate 99 -iL todas.txt --open-only -n -p$1 -n --randomize-hosts -v --min-rate 999
