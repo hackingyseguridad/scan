@@ -1,1 +1,1 @@
-nmap -e eth0 -Pn -iL todas.txt --open -n -p$1 --randomize-hosts --max-retries 1 -oG resultado.txt 
+nmap -e eth0 -Pn -iL todas.txt --open -n -p$1 --randomize-hosts --max-retries 1 --min-rate 999  -oG resultado.txt 
