@@ -24,7 +24,7 @@ fi
 echo
 echo "Escaneaabdo sistemas operativos...!"
 echo
-nmap -Pn $1 $2 $3 -F --randomize-hosts -n -O --osscan-guess $0 -oN resultado.txt
+nmap -Pn $1 $2 $3 -F --randomize-hosts -n -O --osscan-guess -oN resultado.txt
 echo
 echo "======================= RESULTADO ========================="
 echo
