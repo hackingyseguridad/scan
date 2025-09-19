@@ -1,5 +1,5 @@
 # Si encuentra vulnerabilidades en el restuldado.txt, envia por email lo encontrado!
-# hackingyseguridad.com 2025
+#  2025
 
 #!/bin/sh
 
