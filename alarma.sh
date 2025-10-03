@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Script de monitoreo de conexio▒n con alarma por sonido
-# Monitorea ping a 8.8.8.8 y emite beep si falla la conexio▒n
+# Script de monitoreo de conexion con alarma por sonido
+# Monitorea ping a 8.8.8.8 y emite beep si falla la conexion
 
 IP="8.8.8.8"
 INTERVALO=2  # segundos entre pings
