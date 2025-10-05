@@ -3,4 +3,4 @@
 # hacking y seguridad 2023
 # masscan -iL ip.txt --rate 9999 --ping -n --randomize-hosts -v -e wlan0
 
-masscan -iL ip.txt --rate 9999 --ping -n --randomize-hosts -v 
+masscan -iL ip.txt --rate 199 --ping -n --randomize-hosts -v 
