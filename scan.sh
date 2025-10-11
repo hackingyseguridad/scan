@@ -47,7 +47,7 @@ echo "q) Salir"
 echo "Pulsa opcion del tipo de escaneo UDP/TCP: 0 - 9:"; read x
 case $x in
 u)
-echo ""; nmap -iL ip.txt -Pn -p 0-65535 -sV --randomize-hosts  --max-retries 2 -n -oG resultado.txt; tail resultado.txt
+echo ""; nmap -iL ip.txt -Pn -p 0-65535 -sV --randomize-hosts --max-retries 2 -n --min-rate 99 -oG resultado.txt; tail resultado.txt
 ;;
 0) nmap -iL ip.txt -Pn --open -sUTV --max-retries 1 -F -O -oG resultado.txt&exit ;;
 1)
