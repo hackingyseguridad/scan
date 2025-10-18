@@ -30,7 +30,7 @@ sudo apt-get install masscan
 
 while :
 contador=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
-do nmap -iL todas -F -PE -sTV --open -O -n --randomize-hosts --max-retries 2 -O --osscan-guess $0 -oG resultado.txt -oX index.xml -oG $contador
+do nmap -iL todas -F -PE -sTV --open -O -n --randomize-hosts  --defeat-rst-ratelimit --max-retries 2 -O --osscan-guess $0 -oG resultado.txt -oX index.xml -oG $contador
 sudo xsltproc index.xml -o /var/www/html/reports/informe3.htm
 echo
 echo "Generaldo fichero con resultado.: "$contador
