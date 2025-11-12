@@ -1,3 +1,25 @@
+#!/bin/bash
+# Esaneo de puertos/servicios rapido sobre IP, rango o fqdn. 
 echo
 echo "..."
+cat << "INFO"
+
+(:`--..___...-''``-._             |`._
+  ```--...--.      . `-..__      .`/ _\  
+            `\     '       ```--`.    />
+            : :   :               `:`-'
+             `.:.  `.._--...___     ``--...__      
+                ``--..,)       ```----....__,)   http://www.hackingyseguridad.com
+
+INFO
+if [ -z "$1" ]; then
+        echo
+        echo "Esaneo de puertos/servicios, IP, rango o fqdn"
+        echo "Requiere nmap"
+        echo "Uso.: sh vuln.sh <ip>"
+        echo
+        exit 0
+fi
+echo
+echo
 nmap -e eth0 -Pn -iL todas.txt --open -n -p$1 --randomize-hosts --defeat-rst-ratelimit --max-retries 2 --host-timeout 99s  --min-rate 99  -oG resultado.txt 
