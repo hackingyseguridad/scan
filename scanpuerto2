@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn. 
+# (r) hackingyseguridad.com 2025
 echo
 echo "..."
 cat << "INFO"
@@ -16,7 +17,7 @@ if [ -z "$1" ]; then
         echo
         echo "Esaneo de puertos/servicios, IP, rango o fqdn"
         echo "Requiere masscan y listado IP: todas.txt"
-        echo "Uso.: sh scanpuerto2 <ip>"
+        echo "Uso.: sh scanpuerto2 <puerto1,puerto2>"
         echo
         exit 0
 fi
