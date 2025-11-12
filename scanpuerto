@@ -1,5 +1,6 @@
-#!/bin/bash
-# Esaneo de puertos/servicios rapido sobre IP, rango o fqdn. 
+#!/bin/sh
+# Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
+# (r) hackingyseguridad.com 2025
 echo
 echo "..."
 cat << "INFO"
@@ -14,9 +15,9 @@ cat << "INFO"
 INFO
 if [ -z "$1" ]; then
         echo
-        echo "Esaneo de puertos/servicios, IP, rango o fqdn"
-        echo "Requiere nmap"
-        echo "Uso.: sh vuln.sh <ip>"
+        echo "Esaneo rapido de puertos/servicios, IP, rango o fqdn"
+        echo "Requiere nmap y listado de IP, todas.txt"
+        echo "Uso.: sh scanpuerto <puerto1,puerto2>"
         echo
         exit 0
 fi
