@@ -1,7 +1,7 @@
 #!/bin/sh
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
 # Escanea 100000 activos en una hora, pero puede tener una fiabilidad del 50%.
-# Para maxima fiabilidad del escaneo, eliminar el parametro --min-rate 99
+# Para maxima fiabilidad de los resultados del escaneo, eliminar el parametro --min-rate 99
 # (R) hackingyseguridad.com 2025
 echo
 echo "..."
