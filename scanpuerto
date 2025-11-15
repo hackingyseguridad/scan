@@ -1,6 +1,8 @@
 #!/bin/sh
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
-# (r) hackingyseguridad.com 2025
+# Escanea 100000 activos en una hora, pero puede tener una fiabilidad del 50%.
+# Para maxima fiabilidad del escaneo, eliminar el parametro --min-rate 99
+# (R) hackingyseguridad.com 2025
 echo
 echo "..."
 cat << "INFO"
@@ -23,4 +25,4 @@ if [ -z "$1" ]; then
 fi
 echo
 echo
-nmap -e eth0 -Pn -iL todas.txt --open -n -p$1 --randomize-hosts --defeat-rst-ratelimit --max-retries 2 --host-timeout 99s  --min-rate 99  -oG resultado.txt 
+nmap -e eth0 -Pn -iL todas.txt --open -n -p$1 --randomize-hosts --defeat-rst-ratelimit --max-retries 2 --host-timeout 99s  --min-rate 99  -oG resultado.txt
