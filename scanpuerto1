@@ -1,7 +1,7 @@
 #!/bin/sh
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
 # Escanea 100000 activos en una hora, pero puede tener una fiabilidad del 50%.
-# Para maxima velocidad añadir el parametro --min-rate 99
+# Para maxima velocidad añadir el parametro -r=99
 # (R) hackingyseguridad.com 2025
 echo
 echo "..."
@@ -17,7 +17,7 @@ cat << "INFO"
 INFO
 if [ -z "$1" ]; then
         echo
-        echo "Esaneo rapido de puertos/servicios, IP, rango o fqdn"
+        echo "Esaneo rapido de puertos/servicios, IP, rango" 
         echo "Requiere nmap y listado de IP, todas.txt"
         echo "Uso.: sh scanpuerto <puerto1,puerto2>"
         echo
@@ -25,4 +25,7 @@ if [ -z "$1" ]; then
 fi
 echo
 echo
-nmap -e eth0 -Pn -iL todas.txt --open -sS -T4 -n -p$1 --defeat-rst-ratelimit --max-retries 2  -oG resultado.txt
+mv /etc/zmap/zmap.conf /etc/zmap/zmap.conf.bk
+mv /etc/zmap/blocklist.conf  /etc/zmap/blocklist.conf.bk
+echo
+zmap --bandwidth=1M -p 443 8.8.0.0/16 -o resultado.txt
