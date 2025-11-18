@@ -30,6 +30,8 @@ TopBackdoor puertos: 944,4444,1337,31337,8081,12345,54321,60001,47145,27017,1121
 
 TopPostgreSQL puertos: 5432,5433,1433,3306,106
 
+TopCitrix: 80,135,443,1494,2598,7229,8008,8080,9095
+
 #
 http://www.hackingyseguridad.com/
 #
