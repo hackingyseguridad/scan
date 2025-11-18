@@ -18,8 +18,8 @@ INFO
 if [ -z "$1" ]; then
         echo
         echo "Esaneo rapido de puertos/servicios, IP, rango" 
-        echo "Requiere nmap y listado de IP, todas.txt"
-        echo "Uso.: sh scanpuerto <puerto1,puerto2>"
+        echo "Requiere Zmap y listado de IP, todas.txt"
+        echo "Uso.: sh scanpuerto1 <puerto1,puerto2>"
         echo
         exit 0
 fi
