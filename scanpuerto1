@@ -1,7 +1,7 @@
 #!/bin/sh
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
 # Escanea 100000 activos en una hora, pero puede tener una fiabilidad del 50%.
-# Para maxima velocidad añadir el parametro -r=99
+# Para maxima velocidad añadir el parametro  --bandwidth=999
 # (R) hackingyseguridad.com 2025
 echo
 echo "..."
@@ -28,4 +28,4 @@ echo
 mv /etc/zmap/zmap.conf /etc/zmap/zmap.conf.bk
 mv /etc/zmap/blocklist.conf  /etc/zmap/blocklist.conf.bk
 echo
-zmap --bandwidth=1M -p $1 -l=todas.txt -o resultado.txt
+zmap --bandwidth=99M -p $1 -l=todas.txt -o resultado.txt
