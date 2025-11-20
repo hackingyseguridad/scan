@@ -28,4 +28,4 @@ echo
 mv /etc/zmap/zmap.conf /etc/zmap/zmap.conf.bk
 mv /etc/zmap/blocklist.conf  /etc/zmap/blocklist.conf.bk
 echo
-zmap --bandwidth=5M -p $1 -l=todas.txt -o resultado.txt
+zmap --bandwidth=10M -p $1 -l=todas.txt -o resultado.txt
