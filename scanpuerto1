@@ -3,6 +3,7 @@
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
 # Escanea 100000 activos en una hora, pero puede tener una fiabilidad del 50%.
 # Para maxima velocidad añadir el parametro  -r 99
+# otros parametros --seed 1234  -M tcp_synscan 
 # (R) hackingyseguridad.com 2025
 echo
 echo "..."
