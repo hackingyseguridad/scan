@@ -1,4 +1,5 @@
 #!/bin/sh
+# Zmap https://github.com/zmap/zmap 
 # Esaneo de puertos/servicios rapido sobre IP, rango o fqdn en fichero todas.txt.
 # Escanea 100000 activos en una hora, pero puede tener una fiabilidad del 50%.
 # Para maxima velocidad añadir el parametro  --bandwidth=999
