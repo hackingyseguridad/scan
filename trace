@@ -1,3 +1,9 @@
+echo 
 echo "sh trace IP"
-mtr -n -z -e -b -rw $1
 
+#  -e muestra información extendida
+# -z modo compacto
+# -b → enseña nombres de host
+
+mtr -n -z -e -b -rw $1
+echo "..."
