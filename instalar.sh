@@ -26,6 +26,17 @@ git clone https://github.com/vulnersCom/nmap-vulners.git
 git clone https://github.com/scipag/vulscan scipag_vulscan
 ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
 echo
+
+# Script para instalar RustScan
+# rustscan --addresses 192.168.1.0/24 -t 500 -b 1500 -- -A
+
+git clone https://github.com/RustScan/RustScan.git
+cd RustScan
+apt-get install cargo
+cargo build --release
+cp target/release/rustscan /usr/local/bin/
+echo
+echo
 echo "Instalacion finalizada !!!."
 echo
 echo
