@@ -30,11 +30,11 @@ echo
 # Script para instalar RustScan
 # rustscan --addresses 192.168.1.0/24 -t 500 -b 1500 -- -A
 
-git clone https://github.com/RustScan/RustScan.git
-cd RustScan
-apt-get install cargo
-cargo build --release
-cp target/release/rustscan /usr/local/bin/
+# git clone https://github.com/RustScan/RustScan.git
+# cd RustScan
+# apt-get install cargo
+# cargo build --release
+# cp target/release/rustscan /usr/local/bin/
 echo
 echo
 echo "Instalacion finalizada !!!."
