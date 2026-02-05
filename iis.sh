@@ -6,7 +6,7 @@
 # nmap $1 $2 $3 -Pn -p 80,443,8443 --open -sV --script http-server-header,http-headers,http-title  -oN resultado.txt
 
 nmap $1 $2 $3 -Pn -p 80,443,8443,8080,8172,10443 --open -sV \
---script "http-server-header,http-headers,http-title,http-aspnet-debug" \
+--script "http-server-header,http-headers,http-title" \
 --script-args "http-headers.useragent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'" \
 -oN resultado.txt \
 echo
