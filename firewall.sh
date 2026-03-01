@@ -8,7 +8,7 @@
 # Puerto 0 origen -g 0
 
 # Uso: ./firewall.sh <objetivo> [opciones]
-
+echo "Escaneo saltando cortafuegos ..."
 nmap $1 $2 $3 $4 -Pn -F --open \
   --max-retries 2 \
   --min-rate 300 \
