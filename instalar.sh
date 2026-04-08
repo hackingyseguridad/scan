@@ -7,6 +7,7 @@ cp freevulnsearch.nse /usr/share/nmap/scripts/
 apt-get install traceroute whois
 apt-get -y install libpcap-dev
 apt-get -y install masscan
+apt-get -y install pwncat
 chmod 777 bgp2ip
 chmod 777 ip2bgp
 chmod 777 ip2pais
@@ -14,6 +15,8 @@ chmod 777 miip
 chmod 777 miip2
 chmod 777 tracebgp
 chmod 777 scantcp
+chmod 777 scan
+cp scan /sbin/
 cp bgp2ip /sbin/
 cp ip2bgp /sbin/
 cp ip2pais /sbin/
