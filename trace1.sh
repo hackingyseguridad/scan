@@ -3,6 +3,7 @@
 
 DEST="hackingyseguridad.com"
 PORT=443
+MAX_HOPS=30
 TMP_CUR="/tmp/trace_cur.$$"
 TMP_PREV="/tmp/trace_prev.$$"
 
@@ -24,7 +25,12 @@ print_header() {
 get_asn_info() {
     IP="$1"
 
-    # Consulta simple a whois (compatible antiguo)
+    # Si no hay IP válida
+    if [ "$IP" = "*" ]; then
+        echo "?|?|?"
+        return
+    fi
+
     WHOIS=$(whois "$IP" 2>/dev/null)
 
     ASN=$(echo "$WHOIS" | awk '/origin/ {print $2; exit}')
@@ -41,7 +47,7 @@ get_asn_info() {
 }
 
 run_trace() {
-    traceroute -T -p $PORT -n "$DEST" 2>/dev/null | awk '
+    traceroute -T -p $PORT -n -m $MAX_HOPS "$DEST" 2>/dev/null | awk '
     /^[ 0-9]/ {
         hop=$1
         ip=$2
@@ -55,7 +61,13 @@ compare_and_print() {
 
     print_header
 
-    while IFS="|" read HOP IP; do
+    i=1
+    while [ $i -le $MAX_HOPS ]; do
+
+        LINE=$(grep "^$i|" "$TMP_CUR")
+        IP=$(echo "$LINE" | cut -d'|' -f2)
+
+        [ -z "$IP" ] && IP="*"
 
         INFO=$(get_asn_info "$IP")
         ASN=$(echo "$INFO" | cut -d'|' -f1)
@@ -65,8 +77,10 @@ compare_and_print() {
         COLOR=""
 
         if [ -f "$TMP_PREV" ]; then
-            PREV_LINE=$(grep "^$HOP|" "$TMP_PREV")
+            PREV_LINE=$(grep "^$i|" "$TMP_PREV")
             PREV_IP=$(echo "$PREV_LINE" | cut -d'|' -f2)
+
+            [ -z "$PREV_IP" ] && PREV_IP="*"
 
             if [ "$PREV_IP" != "$IP" ]; then
                 COLOR="$RED"
@@ -74,9 +88,10 @@ compare_and_print() {
         fi
 
         printf "│ %-3s │ %s%-15s%s │ %-10s │ %-44s │ %-7s │\n" \
-            "$HOP" "$COLOR" "$IP" "$RESET" "$ASN" "$ASNAME" "$COUNTRY"
+            "$i" "$COLOR" "$IP" "$RESET" "$ASN" "$ASNAME" "$COUNTRY"
 
-    done < "$TMP_CUR"
+        i=$((i+1))
+    done
 
     printf "└─────┴─────────────────┴────────────┴──────────────────────────────────────────────┴─────────┘\n"
 }
@@ -89,8 +104,9 @@ while true; do
 
     cp "$TMP_CUR" "$TMP_PREV"
 
+    echo
     echo "(r) http://www.hackingyseguridad.com/"
-    echo "prueba siguiente traza... en 10 segundos! "
-    sleep 11
+    echo "prueba siguiente traza... en 10 segundos!"
+    sleep 10
 
 done
