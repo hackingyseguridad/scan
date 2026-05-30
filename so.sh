@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Esaneo de sistema operativo y version.
 # @antonio_taboada  2026
 echo
