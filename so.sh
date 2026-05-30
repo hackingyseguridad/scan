@@ -24,7 +24,7 @@ fi
 echo
 echo "Escaneaabdo sistemas operativos...!"
 echo
-nmap -Pn -F "$1" $2 $3 --open -sV -O --osscan-guess -oN resultado.txt -v0
+nmap -Pn -F "$1" $2 $3 --open -sV -O --osscan-guess --defeat-rst-ratelimit -oN resultado.txt -v0
 
 echo "============================================================"
 echo "IP/HOST             | SISTEMA OPERATIVO / KERNEL"
