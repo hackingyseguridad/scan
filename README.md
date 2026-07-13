@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛰️ scan suite
+### 🛰️ scan suite
 
 **Colección de scripts en Bash/POSIX sh, PowerShell y NSE para descubrimiento de hosts, escaneo de puertos, detección de firewalls y análisis de vulnerabilidades**
 
@@ -11,16 +11,6 @@
 </div>
 
 ---
-
-## ⚠️ Aviso legal y uso responsable
-
-Estas herramientas realizan **escaneos activos de red** (sondeos ICMP, TCP, UDP, detección de SO, fingerprinting de servicios y comprobación de vulnerabilidades). Su uso está destinado **exclusivamente** a:
-
-- Auditorías de seguridad **autorizadas por escrito** por el propietario del sistema/red.
-- Entornos de laboratorio, formación o CTF propios.
-- Pentesting profesional dentro del alcance (*scope*) pactado con el cliente.
-
-El escaneo de sistemas de terceros sin autorización puede constituir un **delito** (en España, arts. 197 y ss. del Código Penal, entre otros). El autor y los colaboradores de este repositorio **no se hacen responsables** del mal uso de estos scripts.
 
 ---
 
@@ -50,7 +40,7 @@ El escaneo de sistemas de terceros sin autorización puede constituir un **delit
 
 ---
 
-## 📖 Descripción general
+### Descripción general
 
 `scan` es una suite de **subrutinas independientes** (no un framework monolítico) pensadas para combinarse en flujos de auditoría de red: descubrimiento de hosts vivos → escaneo de puertos → identificación de servicio/SO → detección de vulnerabilidades → informe. Cada script hace **una sola cosa** y puede invocarse suelto desde la línea de comandos o encadenarse con otros mediante los ficheros de texto (`ip.txt`, `resultado.txt`, etc.) que actúan de "pegamento" entre pasos.
 
@@ -58,7 +48,7 @@ La mayoría de scripts están escritos para **Kali Linux**, con dependencia de `
 
 ---
 
-## 🧰 Requisitos
+### Requisitos
 
 | Herramienta | Uso | Instalación (Debian/Kali) |
 |---|---|---|
@@ -79,7 +69,7 @@ La mayoría de scripts están escritos para **Kali Linux**, con dependencia de `
 
 ---
 
-## 🚀 Instalación
+### Instalación
 
 ```bash
 git clone https://github.com/hackingyseguridad/scan
@@ -104,7 +94,7 @@ bash update.sh
 
 ---
 
-## 📂 Ficheros de entrada/salida
+### Ficheros de entrada/salida
 
 La suite se comunica entre scripts mediante ficheros de texto plano en el directorio de trabajo:
 
@@ -121,7 +111,7 @@ La suite se comunica entre scripts mediante ficheros de texto plano en el direct
 
 ---
 
-## 📊 Tabla resumen general
+### Tabla resumen 
 
 | Categoría | Nº scripts | Scripts principales |
 |---|---|---|
@@ -139,7 +129,7 @@ La suite se comunica entre scripts mediante ficheros de texto plano en el direct
 
 ---
 
-## 🔎 Detalle por categoría
+### Detalle por categoría
 
 ### 1. Descubrimiento de hosts (alive/ping)
 
@@ -284,7 +274,7 @@ La suite se comunica entre scripts mediante ficheros de texto plano en el direct
 
 ---
 
-## 🎯 Tablas de puertos de referencia
+### Tablas de puertos de referencia
 
 Listados de puertos usados internamente por varios scripts (`scan.sh`, `scanwebserver.sh`, `firewall.sh`…):
 
@@ -304,19 +294,18 @@ Listados de puertos usados internamente por varios scripts (`scan.sh`, `scanwebs
 
 ---
 
-## 📚 Documentación adicional
+### Documentación adicional
 
 - [`ipv6.md`](ipv6.md) — Guía de referencia IPv4 vs IPv6: tipos de direcciones, cálculo de prefijos, ejemplos de direccionamiento Dual Stack y enlaces a calculadoras de subredes.
 
 ---
 
-## 📜 Licencia
 
-Este proyecto se distribuye bajo licencia [**GPL-3.0**](LICENSE).
 
----
+#
 
-## 👤 Autor
+[@antonio_taboada](https://x.com/antonio_taboada)
 
-**Antonio Taboada** ([@hackyseguridad](https://x.com/hackyseguridad) / [@antonio_taboada](https://x.com/antonio_taboada))
-🌐 [www.hackingyseguridad.com](http://www.hackingyseguridad.com/)
+[www.hackingyseguridad.com](http://www.hackingyseguridad.com/)
+
+#
