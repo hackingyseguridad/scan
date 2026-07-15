@@ -1,6 +1,6 @@
 #!/bin/sh
 # Script para encontrar IPs coincidentes entre ip.txt e ip2.txt
-# Compatible con Bash 1.0.x y shells antiguos
+# Compatible con Bash 1.0.x y shells antiguos + progreso
 
 # Verificar que ambos archivos existen
 if [ ! -f ip.txt ]; then
@@ -13,37 +13,50 @@ if [ ! -f ip2.txt ]; then
     exit 1
 fi
 
+# Contar total de líneas para el progreso
+total=$(wc -l < ip.txt)
+if [ "$total" -eq 0 ]; then
+    echo "El archivo ip.txt está vacío."
+    exit 1
+fi
+
 # Mostrar mensaje de inicio
 echo "Buscando IPs coincidentes entre ip.txt e ip2.txt..."
+echo "Procesando $total líneas..."
 echo "----------------------------------------"
 
-# Variable para contar coincidencias
+# Variable para contar coincidencias y progreso
 coincidencias=0
+procesadas=0
 
-# Usar un archivo temporal para mejor compatibilidad
+# Archivo temporal para búsqueda rápida
 temp_file=/tmp/ip_coincidencias_$$.tmp
+cat ip2.txt > "$temp_file"
 
-# Crear un archivo con las IPs del segundo archivo para búsqueda rápida
-# usando solo comandos básicos compatibles con shells antiguos
-cat ip2.txt > $temp_file
-
-# Leer ip.txt línea por línea
+# Leer ip.txt línea por línea con progreso
 while read ip; do
+    procesadas=$((procesadas + 1))
+    
+    # Mostrar progreso (sobrescribe la misma línea)
+    porcentaje=$((procesadas * 100 / total))
+    printf "\rProcesando: %3d%% (%d/%d)" "$porcentaje" "$procesadas" "$total"
+    
     # Saltar líneas vacías
     if [ -z "$ip" ]; then
         continue
     fi
     
-    # Buscar la IP en el archivo temporal
-    # Usar grep básico sin opciones modernas
-    if grep -x "$ip" $temp_file > /dev/null 2>&1; then
+    # Buscar coincidencia
+    if grep -x "$ip" "$temp_file" > /dev/null 2>&1; then
+        echo ""  # Nueva línea para mostrar la IP coincidente
         echo "$ip"
-        coincidencias=`expr $coincidencias + 1`
+        coincidencias=$((coincidencias + 1))
     fi
 done < ip.txt
 
-# Limpiar archivo temporal
-rm -f $temp_file
+# Limpiar
+rm -f "$temp_file"
 
-echo "----------------------------------------"
+# Finalizar con línea nueva y resumen
+printf "\n----------------------------------------\n"
 echo "Total de IPs coincidentes: $coincidencias"
